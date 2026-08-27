@@ -5,14 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MD. SELIM REZA | Bengali AI Evaluator & Specialist</title>
   
-  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <meta name="description" content="MD. Selim Reza - Bengali AI evaluator, data annotation assistant, and frontend developer." />
 
-  <!-- SEO & Social Meta -->
-  <meta name="description" content="MD. Selim Reza is a Bengali AI evaluator, data annotation assistant, translator, and frontend developer from Rajshahi, Bangladesh." />
-  <meta property="og:title" content="MD. SELIM REZA | Bengali AI Evaluator" />
-  
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -24,7 +19,6 @@
       --bg-card: rgba(17, 24, 39, 0.7);
       --primary: #10b981; 
       --primary-glow: rgba(16, 185, 129, 0.2);
-      --secondary: #6366f1;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --border: rgba(255, 255, 255, 0.08);
@@ -36,15 +30,12 @@
     html { scroll-behavior: smooth; }
     body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-    /* Animated Background */
-    .bg-blobs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; filter: blur(80px); }
+    .bg-blobs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; filter: blur(80px); }
     .blob { position: absolute; width: 500px; height: 500px; background: var(--primary-glow); border-radius: 50%; opacity: 0.3; animation: move 20s infinite alternate; }
-    .blob-2 { right: -100px; top: -100px; background: rgba(99, 102, 241, 0.15); animation-duration: 25s; }
     @keyframes move { from { transform: translate(0, 0); } to { transform: translate(100px, 100px); } }
 
-    /* Layout */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    section { padding: 80px 0; border-bottom: 1px solid var(--border); }
     .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -56,327 +47,229 @@
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
     .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; transition: var(--transition); }
     .nav-links a:hover { color: var(--primary); }
-    .menu-btn { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
     /* Hero */
-    .hero { padding: 180px 0 100px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-    .availability { display: inline-flex; align-items: center; gap: 8px; background: var(--glass); border: 1px solid var(--primary); color: var(--primary); padding: 6px 15px; border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; }
-    .dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); animation: pulse 2s infinite; }
-    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero { padding: 160px 0 80px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; }
     .gradient-text { background: linear-gradient(90deg, var(--primary), #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-text { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 600px; }
-
-    /* Buttons */
-    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+    
     .btn { padding: 0.8rem 1.8rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; }
     .btn-primary { background: var(--primary); color: #000; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
     .btn-outline { border: 1px solid var(--border); color: white; background: var(--glass); }
-    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
     /* Profile Card */
-    .profile-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 30px; text-align: center; backdrop-filter: blur(10px); }
-    .profile-img { width: 200px; height: 200px; border-radius: 50%; border: 4px solid var(--primary); object-fit: cover; margin-bottom: 1.5rem; background: white; }
+    .profile-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; border-radius: 30px; text-align: center; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--primary); object-fit: cover; margin-bottom: 1rem; background: #fff; }
 
-    /* Bento Grid Elements */
-    .section-head { margin-bottom: 3.5rem; }
-    .tag { color: var(--primary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+    /* Grid System */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; border-radius: 20px; transition: var(--transition); }
-    .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-    .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1.2rem; }
+    .card:hover { border-color: var(--primary); }
+    .tag { color: var(--primary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.5rem; display: block; }
 
-    /* Facts List */
-    .facts { list-style: none; margin-top: 1rem; }
-    .facts li { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; }
-    .facts li span { color: var(--text-muted); }
-    .facts li strong { color: var(--primary); }
+    /* Skills */
+    .skills-flex { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .skill-tag { background: var(--glass); border: 1px solid var(--border); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; }
 
-    /* Skills Badges */
-    .skills-flex { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill-tag { background: var(--glass); border: 1px solid var(--border); padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); }
+    /* FAQ */
+    details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; margin-bottom: 0.5rem; cursor: pointer; }
+    summary { font-weight: 600; list-style: none; display: flex; justify-content: space-between; }
 
-    /* FAQ Details */
-    details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; cursor: pointer; }
-    summary { font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-    summary::after { content: '+'; color: var(--primary); font-size: 1.5rem; }
-    details[open] summary::after { content: '−'; }
-    .faq-ans { padding-top: 1rem; color: var(--text-muted); font-size: 0.95rem; }
-
-    /* Legal Sections */
-    .legal-content { font-size: 0.9rem; color: var(--text-muted); max-width: 900px; }
-    .legal-content h3 { color: var(--text-main); margin: 1.5rem 0 0.5rem; }
-
-    /* Form Styles */
-    .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; }
-    input, textarea { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 1rem; border-radius: 10px; color: white; margin-bottom: 1rem; outline: none; font-size: 1rem; }
+    /* Forms */
+    input, textarea { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 1rem; border-radius: 10px; color: white; margin-bottom: 1rem; outline: none; }
     input:focus, textarea:focus { border-color: var(--primary); }
 
+    /* Status Message */
+    #form-status { display: none; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; font-weight: 600; text-align: center; }
+    .status-success { display: block !important; background: rgba(16, 185, 129, 0.2); color: var(--primary); }
+    .status-error { display: block !important; background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
     @media (max-width: 968px) {
-      .hero, .contact-grid { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: 1fr; text-align: center; }
       .nav-links { display: none; }
-      .menu-btn { display: block; }
-      .hero { text-align: center; }
-      .hero-text { margin: 0 auto 2.5rem; }
-      .btn-group { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <div class="bg-blobs">
-    <div class="blob"></div>
-    <div class="blob blob-2"></div>
-  </div>
+  <div class="bg-blobs"><div class="blob"></div></div>
 
   <nav class="navbar">
     <div class="container nav-inner">
       <a href="#" class="logo">MD. SELIM<span>.</span></a>
-      <ul class="nav-links" id="navMenu">
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#samples">Samples</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </div>
   </nav>
 
   <main class="container">
     
-    <!-- HERO -->
     <section class="hero" id="home">
       <div class="reveal">
-        <div class="availability"><span class="dot"></span> Available for remote work</div>
+        <span class="tag">Available for Work</span>
         <h1>Bengali AI & <br><span class="gradient-text">Web Specialist</span></h1>
-        <p class="hero-text">Detail-oriented professional with four years of experience in MS Office, AI-assisted development, and Bengali language analysis.</p>
-        <div class="btn-group">
-          <a href="#contact" class="btn btn-primary">Hire Me Now</a>
-          <a href="Md-Selim-Reza-CV.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">4 years of expertise in AI evaluation, Bengali linguistics, and frontend development.</p>
+        <div class="btn-group" style="display:flex; gap:10px;">
+          <a href="#contact" class="btn btn-primary">Hire Me</a>
+          <a href="Md-Selim-Reza-CV.pdf" download class="btn btn-outline">Download CV</a>
         </div>
       </div>
       <div class="reveal">
         <div class="profile-card">
           <img src="profile-photo.jpg" alt="MD. Selim Reza" class="profile-img">
           <h2>MD. SELIM REZA</h2>
-          <p style="color:var(--primary)">Bengali AI & Content Specialist</p>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 5px;"><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</p>
-          <div class="btn-group" style="justify-content: center; margin-top: 1.5rem;">
-            <a href="https://github.com/epicbite9" target="_blank" class="btn btn-outline" style="padding: 10px;"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/selim-reza-2578313a1" target="_blank" class="btn btn-outline" style="padding: 10px;"><i class="fab fa-linkedin"></i></a>
+          <p style="color:var(--primary)">Rajshahi, Bangladesh</p>
+          <div style="margin-top:1rem;">
+            <a href="https://github.com/epicbite9" target="_blank" style="color:white; margin:0 10px;"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/selim-reza-2578313a1" target="_blank" style="color:white; margin:0 10px;"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
-      <div class="section-head">
-        <span class="tag">About Me</span>
-        <h2>Language expertise meets Technology</h2>
-      </div>
+      <span class="tag">About Me</span>
       <div class="grid">
         <div class="card reveal">
-          <h3>Professional Summary</h3>
-          <p>Native Bengali speaker with professional English proficiency. Specialist in AI response evaluation, ensuring linguistic accuracy and cultural context. 4 years of experience in MS Office and technical documentation.</p>
-          <ul class="facts">
-            <li><span>Experience</span> <strong>4 Years</strong></li>
-            <li><span>Education</span> <strong>HSC (Result Pending)</strong></li>
-            <li><span>Location</span> <strong>Rajshahi, BD</strong></li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3>Technical Skills</h3>
+          <h3>Experience</h3>
+          <p>Native Bengali speaker specializing in AI training and quality evaluation. I bridge the gap between complex language nuances and machine learning accuracy.</p>
           <div class="skills-flex">
-            <span class="skill-tag">Bengali AI Evaluation</span>
-            <span class="skill-tag">Data Annotation</span>
-            <span class="skill-tag">Fact-Checking</span>
-            <span class="skill-tag">HTML/CSS/JS</span>
-            <span class="skill-tag">MS Excel & Word</span>
-            <span class="skill-tag">Translation</span>
-            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">AI Evaluation</span><span class="skill-tag">Data Annotation</span>
+            <span class="skill-tag">Linguistics</span><span class="skill-tag">Web Dev</span>
           </div>
         </div>
+        <div class="card reveal">
+          <h3>Quick Facts</h3>
+          <p><strong>Experience:</strong> 4 Years</p>
+          <p><strong>Education:</strong> HSC (Result Pending)</p>
+          <p><strong>Languages:</strong> Bengali, English</p>
+        </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services">
-      <div class="section-head">
-        <span class="tag">Services</span>
-        <h2>How I can help</h2>
-      </div>
+      <span class="tag">Expertise</span>
       <div class="grid">
         <div class="card reveal">
-          <i class="fas fa-microchip"></i>
-          <h3>AI Evaluation</h3>
-          <p>Reviewing AI-generated responses for accuracy, safety, and cultural relevance.</p>
+          <i class="fas fa-microchip" style="color:var(--primary); font-size:2rem; margin-bottom:1rem;"></i>
+          <h3>AI & Data</h3>
+          <p>Reviewing AI outputs for grammar, cultural safety, and instruction-following.</p>
         </div>
         <div class="card reveal">
-          <i class="fas fa-pen-nib"></i>
-          <h3>Proofreading</h3>
-          <p>Fixing Bengali spelling, grammar, and unnatural machine translations.</p>
-        </div>
-        <div class="card reveal">
-          <i class="fas fa-code"></i>
-          <h3>Web Development</h3>
-          <p>Building responsive frontend websites and browser-based tools.</p>
+          <i class="fas fa-code" style="color:var(--primary); font-size:2rem; margin-bottom:1rem;"></i>
+          <h3>Web Dev</h3>
+          <p>Developing responsive, professional frontend sites and utility tools.</p>
         </div>
       </div>
     </section>
 
-    <!-- SAMPLES -->
     <section id="samples">
-      <div class="section-head">
-        <span class="tag">Work Samples</span>
-        <h2>Demonstration of Quality</h2>
-      </div>
+      <span class="tag">Demonstration Work</span>
       <div class="grid">
         <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">01 · AI Response Evaluation</small>
-          <p style="margin-top:10px;">Deep analysis of Bengali LLM outputs for instruction-following and accuracy.</p>
+          <h3>AI Evaluation Sample</h3>
+          <p>Comparative analysis of Bengali LLM responses for factual accuracy.</p>
         </div>
         <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">02 · Bengali Proofreading</small>
-          <p style="margin-top:10px;">Correcting complex linguistic structures in technical and literary Bengali.</p>
-        </div>
-        <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">03 · Data Annotation</small>
-          <p style="margin-top:10px;">Structured labeling and categorization for machine learning datasets.</p>
+          <h3>Web: MyImageTools</h3>
+          <p>Browser-based utility tool built for high-speed image processing.</p>
         </div>
       </div>
     </section>
 
-    <!-- BLOG -->
-    <section id="blog">
-      <div class="section-head">
-        <span class="tag">Insights</span>
-        <h2>Blog</h2>
-      </div>
-      <div class="grid">
-        <article class="card reveal">
-          <small style="color:var(--primary)">AI & LANGUAGE</small>
-          <h3 style="margin: 10px 0;">Why Bengali Context Matters</h3>
-          <p>Linguistic nuances, honorifics, and local idioms are crucial for high-quality AI training.</p>
-        </article>
-        <article class="card reveal">
-          <small style="color:var(--primary)">QUALITY</small>
-          <h3 style="margin: 10px 0;">5 Steps to Fact-Checking</h3>
-          <p>How I ensure AI-generated information is verifiable and trustworthy.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="section-head">
-        <span class="tag">Help</span>
-        <h2>FAQs</h2>
-      </div>
-      <div style="max-width: 800px;">
-        <details class="reveal">
-          <summary>What type of remote work do you accept?</summary>
-          <div class="faq-ans">I accept Bengali AI evaluation, translation, proofreading, and web development.</div>
-        </details>
-        <details class="reveal">
-          <summary>Can you work with detailed guidelines?</summary>
-          <div class="faq-ans">Yes, I have extensive experience following complex evaluation criteria.</div>
-        </details>
-      </div>
-    </section>
-
-    <!-- CORRECTED CONTACT FORM -->
     <section id="contact">
-      <div class="section-head">
-        <span class="tag">Contact</span>
-        <h2>Let's build something.</h2>
-      </div>
-      <div class="contact-grid">
-        <!-- FIXED NETLIFY FORM -->
-        <form 
-          name="contact" 
-          method="POST" 
-          action="/" 
-          data-netlify="true" 
-          netlify-honeypot="bot-field"
-          class="reveal"
-        >
-          <!-- Hidden inputs for Netlify -->
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label>Don’t fill this out: <input name="bot-field" /></label>
-          </p>
-
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-          
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
-            Send Message
-          </button>
-        </form>
+      <span class="tag">Inquiry</span>
+      <h2>Contact Me</h2>
+      <div class="grid" style="grid-template-columns: 1.5fr 1fr; gap: 3rem;">
         
+        <!-- AJAX FORM -->
+        <div class="reveal">
+          <div id="form-status"></div>
+          <form id="contact-form" name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Project Details" required></textarea>
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+
         <div class="reveal">
           <div class="card">
-            <h3>Contact Details</h3>
-            <p style="margin: 1rem 0;"><i class="fas fa-envelope" style="color:var(--primary)"></i> <a href="mailto:imdselim95@gmail.com" style="color:white; text-decoration:none;"> imdselim95@gmail.com</a></p>
-            <p style="margin: 1rem 0;"><i class="fas fa-phone" style="color:var(--primary)"></i> <a href="tel:+8801345468615" style="color:white; text-decoration:none;"> +880 1345 468615</a></p>
-            <div class="btn-group" style="margin-top:2rem;">
-              <a href="https://wa.me/8801345468615" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
-            </div>
+            <h3>Contact Info</h3>
+            <p style="margin-top:1rem;"><i class="fas fa-envelope"></i> imdselim95@gmail.com</p>
+            <p style="margin-top:0.5rem;"><i class="fas fa-phone"></i> +880 1345 468615</p>
+            <a href="https://wa.me/8801345468615" target="_blank" class="btn btn-outline" style="margin-top:1.5rem; width:100%; justify-content:center;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LEGAL -->
     <section id="legal">
       <div class="grid">
         <div class="reveal">
-          <span class="tag">Policies</span>
-          <h2>Privacy Policy</h2>
-          <p style="color:var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">This site does not collect personal data except through voluntary contact form submissions.</p>
+          <span class="tag">Privacy</span>
+          <p style="font-size:0.8rem; color:var(--text-muted);">This site collects data only for the purpose of professional communication via the contact form.</p>
         </div>
         <div class="reveal">
           <span class="tag">Terms</span>
-          <h2>Terms of Service</h2>
-          <p style="color:var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">All project terms and pricing are agreed upon in writing before work commences.</p>
+          <p style="font-size:0.8rem; color:var(--text-muted);">All service agreements and project timelines are finalized before work begins.</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer style="padding: 3rem 0; text-align: center; border-top: 1px solid var(--border);">
-    <p style="color:var(--text-muted); font-size: 0.9rem;">&copy; <span id="year"></span> MD. SELIM REZA. All rights reserved.</p>
+  <footer style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--border);">
+    <p style="color:var(--text-muted); font-size: 0.8rem;">&copy; <span id="year"></span> MD. SELIM REZA. Built with Quality.</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-      if(menu.style.display === 'flex') {
-        menu.style.flexDirection = 'column';
-        menu.style.position = 'absolute';
-        menu.style.top = '70px';
-        menu.style.left = '0';
-        menu.style.width = '100%';
-        menu.style.background = 'var(--bg-dark)';
-        menu.style.padding = '2rem';
-      }
-    }
-
+    // Intersection Observer for Scroll Effects
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // BULLETPROOF AJAX FORM SUBMISSION
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    const btn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.innerText = "Sending...";
+
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        if (response.ok) {
+          status.innerText = "Success! Your message has been sent.";
+          status.className = "status-success";
+          form.reset();
+          btn.innerText = "Message Sent!";
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        status.innerText = "Oops! There was an error. Please email me directly.";
+        status.className = "status-error";
+        btn.disabled = false;
+        btn.innerText = "Try Again";
+      }
+    });
   </script>
 </body>
-  </html>
+</html>
