@@ -69,7 +69,7 @@
 
     /* Buttons */
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn { padding: 0.8rem 1.8rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
+    .btn { padding: 0.8rem 1.8rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; }
     .btn-primary { background: var(--primary); color: #000; }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
     .btn-outline { border: 1px solid var(--border); color: white; background: var(--glass); }
@@ -97,12 +97,6 @@
     .skills-flex { display: flex; flex-wrap: wrap; gap: 10px; }
     .skill-tag { background: var(--glass); border: 1px solid var(--border); padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); }
 
-    /* Pricing */
-    .price { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0; }
-    .price-list { list-style: none; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .price-list li { margin-bottom: 8px; }
-    .price-list li::before { content: "✓ "; color: var(--primary); }
-
     /* FAQ Details */
     details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; cursor: pointer; }
     summary { font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
@@ -114,12 +108,11 @@
     .legal-content { font-size: 0.9rem; color: var(--text-muted); max-width: 900px; }
     .legal-content h3 { color: var(--text-main); margin: 1.5rem 0 0.5rem; }
 
-    /* Form */
+    /* Form Styles */
     .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; }
-    input, textarea { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 1rem; border-radius: 10px; color: white; margin-bottom: 1rem; outline: none; }
+    input, textarea { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 1rem; border-radius: 10px; color: white; margin-bottom: 1rem; outline: none; font-size: 1rem; }
     input:focus, textarea:focus { border-color: var(--primary); }
 
-    /* Responsive */
     @media (max-width: 968px) {
       .hero, .contact-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -158,7 +151,7 @@
       <div class="reveal">
         <div class="availability"><span class="dot"></span> Available for remote work</div>
         <h1>Bengali AI & <br><span class="gradient-text">Web Specialist</span></h1>
-        <p class="hero-text">Detail-oriented and tech-savvy professional with four years of experience in Microsoft Office, AI-assisted development, and Bengali language analysis.</p>
+        <p class="hero-text">Detail-oriented professional with four years of experience in MS Office, AI-assisted development, and Bengali language analysis.</p>
         <div class="btn-group">
           <a href="#contact" class="btn btn-primary">Hire Me Now</a>
           <a href="Md-Selim-Reza-CV.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
@@ -178,7 +171,7 @@
       </div>
     </section>
 
-    <!-- ABOUT & SKILLS -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="section-head">
         <span class="tag">About Me</span>
@@ -186,8 +179,8 @@
       </div>
       <div class="grid">
         <div class="card reveal">
-          <h3>My Story</h3>
-          <p>I am a native Bengali speaker with professional English proficiency. My background includes four years of MS Office experience and AI-assisted development. I leverage classical and modern Bengali literature to ensure AI responses sound natural, culturally appropriate, and grammatically perfect.</p>
+          <h3>Professional Summary</h3>
+          <p>Native Bengali speaker with professional English proficiency. Specialist in AI response evaluation, ensuring linguistic accuracy and cultural context. 4 years of experience in MS Office and technical documentation.</p>
           <ul class="facts">
             <li><span>Experience</span> <strong>4 Years</strong></li>
             <li><span>Education</span> <strong>HSC (Result Pending)</strong></li>
@@ -199,14 +192,11 @@
           <div class="skills-flex">
             <span class="skill-tag">Bengali AI Evaluation</span>
             <span class="skill-tag">Data Annotation</span>
-            <span class="skill-tag">Translation</span>
             <span class="skill-tag">Fact-Checking</span>
             <span class="skill-tag">HTML/CSS/JS</span>
             <span class="skill-tag">MS Excel & Word</span>
+            <span class="skill-tag">Translation</span>
             <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">Netlify</span>
-            <span class="skill-tag">Content Evaluation</span>
-            <span class="skill-tag">Google Workspace</span>
           </div>
         </div>
       </div>
@@ -222,37 +212,22 @@
         <div class="card reveal">
           <i class="fas fa-microchip"></i>
           <h3>AI Evaluation</h3>
-          <p>Reviewing AI-generated Bengali responses for accuracy, safety, and relevance.</p>
+          <p>Reviewing AI-generated responses for accuracy, safety, and cultural relevance.</p>
         </div>
         <div class="card reveal">
           <i class="fas fa-pen-nib"></i>
           <h3>Proofreading</h3>
-          <p>Correcting Bengali spelling, grammar, and unnatural machine-generated writing.</p>
-        </div>
-        <div class="card reveal">
-          <i class="fas fa-globe"></i>
-          <h3>Translation</h3>
-          <p>Bengali-English localization while preserving cultural intent and tone.</p>
-        </div>
-        <div class="card reveal">
-          <i class="fas fa-tags"></i>
-          <h3>Data Annotation</h3>
-          <p>Structured labeling, quality review, and guideline-based data categorization.</p>
-        </div>
-        <div class="card reveal">
-          <i class="fas fa-file-excel"></i>
-          <h3>MS Office Support</h3>
-          <p>Creating professional reports, Excel spreadsheets, and clean documentation.</p>
+          <p>Fixing Bengali spelling, grammar, and unnatural machine translations.</p>
         </div>
         <div class="card reveal">
           <i class="fas fa-code"></i>
           <h3>Web Development</h3>
-          <p>Building responsive browser-based tools and static frontend websites.</p>
+          <p>Building responsive frontend websites and browser-based tools.</p>
         </div>
       </div>
     </section>
 
-    <!-- DEMO SAMPLES -->
+    <!-- SAMPLES -->
     <section id="samples">
       <div class="section-head">
         <span class="tag">Work Samples</span>
@@ -261,67 +236,15 @@
       <div class="grid">
         <div class="card reveal" style="border-left: 4px solid var(--primary);">
           <small style="color: var(--primary);">01 · AI Response Evaluation</small>
-          <p style="margin-top:10px;">Comparing two Bengali AI answers to select the strongest based on accuracy and instruction-following.</p>
+          <p style="margin-top:10px;">Deep analysis of Bengali LLM outputs for instruction-following and accuracy.</p>
         </div>
         <div class="card reveal" style="border-left: 4px solid var(--primary);">
           <small style="color: var(--primary);">02 · Bengali Proofreading</small>
-          <p style="margin-top:10px;">Fixing unnatural sentence constructions and punctuation in complex Bengali paragraphs.</p>
+          <p style="margin-top:10px;">Correcting complex linguistic structures in technical and literary Bengali.</p>
         </div>
         <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">03 · Translation Review</small>
-          <p style="margin-top:10px;">Ensuring English-to-Bengali translations preserve tone and cultural metaphors.</p>
-        </div>
-        <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">04 · Fact-Checking</small>
-          <p style="margin-top:10px;">Separating verifiable data from unsupported claims in AI outputs.</p>
-        </div>
-        <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">05 · Tone & Context</small>
-          <p style="margin-top:10px;">Evaluating if Bengali text is formal, respectful, or persuasive based on target audience.</p>
-        </div>
-        <div class="card reveal" style="border-left: 4px solid var(--primary);">
-          <small style="color: var(--primary);">06 · Excel Data Org</small>
-          <p style="margin-top:10px;">Cleaning inconsistent datasets and standardizing information into readable reports.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-      <div class="section-head">
-        <span class="tag">Pricing</span>
-        <h2>Flexible Starting Rates</h2>
-      </div>
-      <div class="grid">
-        <div class="card reveal">
-          <h3>Language Support</h3>
-          <div class="price">From $5</div>
-          <ul class="price-list">
-            <li>Short Translations</li>
-            <li>Grammar Correction</li>
-            <li>Proofreading</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline" style="width:100%; justify-content: center;">Quote</a>
-        </div>
-        <div class="card reveal" style="border-color: var(--primary);">
-          <h3>AI & Data Work</h3>
-          <div class="price">From $8</div>
-          <ul class="price-list">
-            <li>Response Evaluation</li>
-            <li>Data Annotation</li>
-            <li>Fact-Checking</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary" style="width:100%; justify-content: center;">Quote</a>
-        </div>
-        <div class="card reveal">
-          <h3>Web Support</h3>
-          <div class="price">From $20</div>
-          <ul class="price-list">
-            <li>Landing Pages</li>
-            <li>Website Updates</li>
-            <li>Basic Debugging</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline" style="width:100%; justify-content: center;">Quote</a>
+          <small style="color: var(--primary);">03 · Data Annotation</small>
+          <p style="margin-top:10px;">Structured labeling and categorization for machine learning datasets.</p>
         </div>
       </div>
     </section>
@@ -330,23 +253,18 @@
     <section id="blog">
       <div class="section-head">
         <span class="tag">Insights</span>
-        <h2>Blog & Thoughts</h2>
+        <h2>Blog</h2>
       </div>
       <div class="grid">
         <article class="card reveal">
           <small style="color:var(--primary)">AI & LANGUAGE</small>
           <h3 style="margin: 10px 0;">Why Bengali Context Matters</h3>
-          <p>Bengali AI evaluation requires more than spelling. Meaning changes through tone, honorifics, and cultural idioms.</p>
+          <p>Linguistic nuances, honorifics, and local idioms are crucial for high-quality AI training.</p>
         </article>
         <article class="card reveal">
-          <small style="color:var(--primary)">QUALITY REVIEW</small>
-          <h3 style="margin: 10px 0;">5 Things to Check in AI Answers</h3>
-          <p>Accuracy, relevance, completeness, clarity, and following the user's specific instructions.</p>
-        </article>
-        <article class="card reveal">
-          <small style="color:var(--primary)">WEB DEV</small>
-          <h3 style="margin: 10px 0;">AI-Assisted Development</h3>
-          <p>Using AI as a tool while maintaining full responsibility for testing, security, and usability.</p>
+          <small style="color:var(--primary)">QUALITY</small>
+          <h3 style="margin: 10px 0;">5 Steps to Fact-Checking</h3>
+          <p>How I ensure AI-generated information is verifiable and trustworthy.</p>
         </article>
       </div>
     </section>
@@ -355,48 +273,58 @@
     <section id="faq">
       <div class="section-head">
         <span class="tag">Help</span>
-        <h2>Frequently Asked Questions</h2>
+        <h2>FAQs</h2>
       </div>
       <div style="max-width: 800px;">
         <details class="reveal">
           <summary>What type of remote work do you accept?</summary>
-          <div class="faq-ans">I accept Bengali AI evaluation, data annotation, proofreading, translation, and basic web development projects.</div>
+          <div class="faq-ans">I accept Bengali AI evaluation, translation, proofreading, and web development.</div>
         </details>
         <details class="reveal">
           <summary>Can you work with detailed guidelines?</summary>
-          <div class="faq-ans">Yes. I am comfortable following structured instructions, evaluation criteria, and quality-control procedures.</div>
-        </details>
-        <details class="reveal">
-          <summary>Do you offer a free trial project?</summary>
-          <div class="faq-ans">I can discuss a small, clearly defined sample task before a larger project begins.</div>
+          <div class="faq-ans">Yes, I have extensive experience following complex evaluation criteria.</div>
         </details>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CORRECTED CONTACT FORM -->
     <section id="contact">
       <div class="section-head">
         <span class="tag">Contact</span>
         <h2>Let's build something.</h2>
       </div>
       <div class="contact-grid">
-        <form class="reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <!-- FIXED NETLIFY FORM -->
+        <form 
+          name="contact" 
+          method="POST" 
+          action="/" 
+          data-netlify="true" 
+          netlify-honeypot="bot-field"
+          class="reveal"
+        >
+          <!-- Hidden inputs for Netlify -->
           <input type="hidden" name="form-name" value="contact" />
-          <p hidden><label><input name="bot-field" /></label></p>
-          
+          <p hidden>
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Email Address" required>
           <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-          <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message
+          </button>
         </form>
         
         <div class="reveal">
           <div class="card">
             <h3>Contact Details</h3>
-            <p style="margin: 1rem 0;"><i class="fas fa-envelope color-primary"></i> <a href="mailto:imdselim95@gmail.com" style="color:white; text-decoration:none;"> imdselim95@gmail.com</a></p>
-            <p style="margin: 1rem 0;"><i class="fas fa-phone color-primary"></i> <a href="tel:+8801345468615" style="color:white; text-decoration:none;"> +880 1345 468615</a></p>
+            <p style="margin: 1rem 0;"><i class="fas fa-envelope" style="color:var(--primary)"></i> <a href="mailto:imdselim95@gmail.com" style="color:white; text-decoration:none;"> imdselim95@gmail.com</a></p>
+            <p style="margin: 1rem 0;"><i class="fas fa-phone" style="color:var(--primary)"></i> <a href="tel:+8801345468615" style="color:white; text-decoration:none;"> +880 1345 468615</a></p>
             <div class="btn-group" style="margin-top:2rem;">
-              <a href="https://wa.me/8801345468615" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+              <a href="https://wa.me/8801345468615" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
             </div>
           </div>
         </div>
@@ -409,45 +337,29 @@
         <div class="reveal">
           <span class="tag">Policies</span>
           <h2>Privacy Policy</h2>
-          <div class="legal-content">
-            <p>This website does not intentionally collect personal information unless you voluntarily submit it through the contact form, email, or WhatsApp.</p>
-            <h3>Contact Form</h3>
-            <p>Information submitted is used only to respond to your inquiry and discuss work.</p>
-            <h3>External Links</h3>
-            <p>This website contains links to GitHub, LinkedIn, and Netlify. Their policies apply when you visit those services.</p>
-          </div>
+          <p style="color:var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">This site does not collect personal data except through voluntary contact form submissions.</p>
         </div>
         <div class="reveal">
           <span class="tag">Terms</span>
           <h2>Terms of Service</h2>
-          <div class="legal-content">
-            <p>Service details, availability, pricing, and deadlines must be agreed upon before work begins.</p>
-            <h3>Work Samples</h3>
-            <p>Samples are demonstrations to show capabilities. They do not represent paid client work unless stated.</p>
-            <h3>Payments</h3>
-            <p>Payment terms should be agreed upon in writing before a project starts.</p>
-          </div>
+          <p style="color:var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">All project terms and pricing are agreed upon in writing before work commences.</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer style="padding: 3rem 0; border-top: 1px solid var(--border); text-align: center;">
-    <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; <span id="year"></span> MD. SELIM REZA. All rights reserved.</p>
+  <footer style="padding: 3rem 0; text-align: center; border-top: 1px solid var(--border);">
+    <p style="color:var(--text-muted); font-size: 0.9rem;">&copy; <span id="year"></span> MD. SELIM REZA. All rights reserved.</p>
   </footer>
 
   <script>
-    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile Menu Toggle
     function toggleMenu() {
       const menu = document.getElementById('navMenu');
-      if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'flex';
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+      if(menu.style.display === 'flex') {
         menu.style.flexDirection = 'column';
         menu.style.position = 'absolute';
         menu.style.top = '70px';
@@ -455,19 +367,14 @@
         menu.style.width = '100%';
         menu.style.background = 'var(--bg-dark)';
         menu.style.padding = '2rem';
-        menu.style.borderBottom = '1px solid var(--border)';
       }
     }
 
-    // Scroll Reveal Effect
-    const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('active');
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
