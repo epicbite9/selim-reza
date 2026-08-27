@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MD. SELIM REZA | Bengali AI Evaluator</title>
+
+  <meta
+    name="description"
+    content="MD. Selim Reza is a Bengali AI evaluator, data annotation assistant, translator, proofreader, and AI-assisted frontend developer from Rajshahi, Bangladesh."
+  />
+
+  <meta property="og:title" content="MD. SELIM REZA | Bengali AI Evaluator" />
+  <meta
+    property="og:description"
+    content="Bengali AI evaluation, data annotation, proofreading, translation, MS Office, and web support."
+  />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --background: #08111f;
+      --surface: #101d31;
+      --surface-2: #14243c;
+      --text: #f5f8ff;
+      --muted: #aab7ca;
+      --primary: #65e6b7;
+      --secondary: #80aaff;
+      --border: rgba(255, 255, 255, 0.13);
+      --max-width: 1150px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(101, 230, 183, 0.13), transparent 30%),
+        radial-gradient(circle at top left, rgba(128, 170, 255, 0.12), transparent 30%),
+        var(--background);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8, 17, 31, 0.91);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span,
+    .green {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.93rem;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-button {
+      display: none;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 11px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .hero {
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      border: 1px solid rgba(101, 230, 183, 0.3);
+      background: rgba(101, 230, 183, 0.09);
+      border-radius: 30px;
+      padding: 8px 14px;
+      margin-bottom: 22px;
+      font-size: 0.88rem;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.06;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--secondary);
+      font-size: 1.18rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero-text,
+    .section-heading p,
+    .card p,
+    .about-text,
+    .blog-card p,
+    .faq-answer,
+    .legal p {
+      color: var(--muted);
+    }
+
+    .hero-text {
+      max-width: 680px;
+      font-size: 1.08rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      color: #061117;
+      background: var(--primary);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(101, 230, 183, 0.25);
+    }
+
+    .button-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .button-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .profile-card {
+      padding: 30px;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(101, 230, 183, 0.13), rgba(128, 170, 255, 0.12));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .profile-photo {
+      width: 205px;
+      height: 205px;
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      border: 5px solid rgba(101, 230, 183, 0.65);
+      background: white;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+    }
+
+    .location {
+      color: var(--primary) !important;
+      margin-top: 13px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card,
+    .blog-card,
+    .price-card,
+    .contact-box,
+    .sample {
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+    }
+
+    .facts {
+      list-style: none;
+    }
+
+    .facts li {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .facts li:last-child {
+      border-bottom: 0;
+    }
+
+    .facts strong {
+      color: var(--text);
+      display: inline-block;
+      min-width: 115px;
+    }
+
+    .three-column,
+    .pricing-grid,
+    .blog-grid,
+    .samples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .price-card {
+      text-align: center;
+    }
+
+    .price {
+      color: var(--primary);
+      font-size: 1.7rem;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .price-card ul {
+      list-style: none;
+      text-align: left;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .price-card li {
+      margin: 7px 0;
+    }
+
+    .price-card li::before {
+      content: "✓ ";
+      color: var(--primary);
+    }
+
+    .project-link,
+    .blog-link,
+    .social-link {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: bold;
+      margin-top: 16px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 13px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sample {
+      border-left: 4px solid var(--primary);
+    }
+
+    .sample small,
+    .blog-date {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .sample p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .blog-card {
+      min-height: 275px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card p {
+      flex: 1;
+    }
+
+    .blog-date {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: grid;
+      gap: 13px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      color: var(--text);
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--primary);
+      border-color: transparent;
+    }
+
+    .contact-details {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .contact-details a {
+      color: var(--primary);
+      word-break: break-word;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-link {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 13px;
+      margin-top: 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      max-width: 850px;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 17px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .faq-answer {
+      padding-top: 12px;
+    }
+
+    .legal {
+      max-width: 850px;
+    }
+
+    .legal h3 {
+      margin-top: 22px;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .three-column,
+      .pricing-grid,
+      .blog-grid,
+      .samples-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-card {
+        max-width: 430px;
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 620px) {
+      section {
+        padding: 65px 0;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px;
+      }
+
+      .three-column,
+      .pricing-grid,
+      .blog-grid,
+      .samples-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">MD. SELIM<span>.</span></a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#samples">Samples</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="availability">
+            <span class="dot"></span>
+            Available for remote work
+          </div>
+
+          <h1>
+            Bengali AI &<br />
+            <span>Web Specialist</span>
+          </h1>
+
+          <p class="subtitle">
+            Bengali AI Evaluator | Data Annotation Assistant
+          </p>
+
+          <p class="hero-text">
+            Detail-oriented and tech-savvy professional with four years of
+            experience in Microsoft Office, AI-assisted web development,
+            Bengali language analysis, proofreading, fact-checking, and
+            browser-based web projects.
+          </p>
+
+          <div class="buttons">
+            <a class="button button-primary" href="#contact">Hire Me</a>
+            <a class="button button-outline" href="Md-Selim-Reza-CV.pdf" download>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <img
+            src="profile-photo.jpg"
+            alt="Professional portrait of MD. Selim Reza"
+            class="profile-photo"
+          />
+          <h2>MD. SELIM REZA</h2>
+          <p>Bengali AI & Content Evaluation Specialist</p>
+          <p class="location">📍 Rajshahi, Bangladesh</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">About Me</div>
+          <h2>Language expertise combined with technology.</h2>
+          <p>
+            I help improve digital content and AI systems through careful
+            Bengali language evaluation, research, proofreading, translation,
+            and instruction-based review.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Professional Summary</h3>
+            <p>
+              I am a native Bengali speaker with professional working proficiency
+              in English. My background includes four years of Microsoft Office
+              experience, AI-assisted frontend development, fact-checking,
+              critical reading, documentation, and technical problem-solving.
+            </p>
+            <br />
+            <p>
+              My knowledge of classical and modern Bengali literature helps me
+              understand grammar, metaphors, cultural references, context, tone,
+              and natural language expression.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Quick Information</h3>
+            <ul class="facts">
+              <li><strong>Location:</strong> Rajshahi, Bangladesh</li>
+              <li><strong>Languages:</strong> Bengali, English</li>
+              <li><strong>Education:</strong> HSC, result pending</li>
+              <li><strong>Experience:</strong> 4 years</li>
+              <li><strong>Work type:</strong> Remote, freelance, contract</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Services</div>
+          <h2>How I can help</h2>
+          <p>
+            Flexible support for AI projects, Bengali content, documentation,
+            research, and basic frontend work.
+          </p>
+        </div>
+
+        <div class="three-column">
+          <div class="card">
+            <div class="service-icon">🧠</div>
+            <h3>Bengali AI Evaluation</h3>
+            <p>
+              Review AI-generated Bengali responses for accuracy, relevance,
+              grammar, tone, context, safety, and completeness.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-icon">✍️</div>
+            <h3>Proofreading</h3>
+            <p>
+              Correct Bengali spelling, grammar, punctuation, sentence
+              structure, and unnatural machine-generated writing.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-icon">🌐</div>
+            <h3>Translation</h3>
+            <p>
+              Translate and localize content between Bengali and English while
+              preserving meaning, tone, and cultural context.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-icon">📊</div>
+            <h3>Data Annotation</h3>
+            <p>
+              Perform structured labeling, comparison, categorization, quality
+              review, and guideline-based content evaluation.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-icon">🗂️</div>
+            <h3>MS Word & Excel</h3>
+            <p>
+              Create documents, format reports, organize information, and
+              prepare clean spreadsheets.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>
+              Build, test, debug, and deploy simple responsive websites and
+              browser-based tools.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Pricing</div>
+          <h2>Flexible starting prices</h2>
+          <p>
+            Final pricing depends on project length, complexity, deadline, and
+            required revisions.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Language Support</h3>
+            <div class="price">From $5</div>
+            <ul>
+              <li>Proofreading</li>
+              <li>Short translation</li>
+              <li>Grammar correction</li>
+            </ul>
+            <a class="button button-outline" href="#contact">Request Quote</a>
+          </div>
+
+          <div class="price-card">
+            <h3>AI & Data Work</h3>
+            <div class="price">From $8</div>
+            <ul>
+              <li>AI response evaluation</li>
+              <li>Data annotation</li>
+              <li>Fact-checking</li>
+            </ul>
+            <a class="button button-outline" href="#contact">Request Quote</a>
+          </div>
+
+          <div class="price-card">
+            <h3>Web Support</h3>
+            <div class="price">From $20</div>
+            <ul>
+              <li>Landing pages</li>
+              <li>Website updates</li>
+              <li>Basic debugging</li>
+            </ul>
+            <a class="button button-outline" href="#contact">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Projects</div>
+          <h2>Selected project</h2>
+        </div>
+
+        <div class="card">
+          <h3>MyImageTools</h3>
+          <p>
+            A browser-based image utility platform for compression, resizing,
+            cropping, format conversion, background removal, and image
+            upscaling. The project demonstrates frontend development,
+            client-side processing, UI design, debugging, and Netlify
+            deployment.
+          </p>
+          <a
+            class="project-link"
+            href="https://myimagetools.netlify.app"
+            target="_blank"
+            rel="noopener"
+          >
+            Visit MyImageTools →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="samples">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Demonstration Work</div>
+          <h2>Example work samples</h2>
+          <p>
+            These are demonstration samples created to show the type of work I
+            can provide.
+          </p>
+        </div>
+
+        <div class="samples-grid">
+          <div class="sample">
+            <small>01 · AI Response Evaluation</small>
+            <p>
+              Compare two Bengali AI answers and select the stronger response
+              based on accuracy, relevance, completeness, clarity, and
+              instruction-following.
+            </p>
+          </div>
+
+          <div class="sample">
+            <small>02 · Bengali Proofreading</small>
+            <p>
+              Identify spelling, punctuation, grammar, and unnatural sentence
+              construction, then provide a clear corrected version.
+            </p>
+          </div>
+
+          <div class="sample">
+            <small>03 · Translation Review</small>
+            <p>
+              Check whether an English-to-Bengali translation preserves the
+              original meaning, tone, context, and cultural intent.
+            </p>
+          </div>
+
+          <div class="sample">
+            <small>04 · Fact-Checking</small>
+            <p>
+              Separate verifiable information from unsupported claims and
+              explain which parts require stronger evidence.
+            </p>
+          </div>
+
+          <div class="sample">
+            <small>05 · Tone and Context Review</small>
+            <p>
+              Check whether Bengali writing is formal, conversational,
+              respectful, instructional, persuasive, or culturally appropriate.
+            </p>
+          </div>
+
+          <div class="sample">
+            <small>06 · Excel Data Organization</small>
+            <p>
+              Organize inconsistent information into clean columns, standardize
+              formatting, remove duplicates, and prepare readable reports.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Skills</div>
+          <h2>Technical and professional skills</h2>
+        </div>
+
+        <div class="skills">
+          <span class="skill">Bengali AI Evaluation</span>
+          <span class="skill">Data Annotation</span>
+          <span class="skill">Bengali Proofreading</span>
+          <span class="skill">Bengali-English Translation</span>
+          <span class="skill">Fact-Checking</span>
+          <span class="skill">Critical Reading</span>
+          <span class="skill">Content Evaluation</span>
+          <span class="skill">MS Word</span>
+          <span class="skill">MS Excel</span>
+          <span class="skill">PowerPoint</span>
+          <span class="skill">Google Workspace</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">AI-Assisted Development</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">Netlify</span>
+          <span class="skill">Technical Debugging</span>
+          <span class="skill">Responsive Web Design</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Blog</div>
+          <h2>Useful thoughts on AI and language</h2>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <span class="blog-date">AI & LANGUAGE</span>
+            <h3>Why Bengali Context Matters in AI Evaluation</h3>
+            <p>
+              Bengali AI evaluation requires more than checking spelling.
+              Meaning can change through tone, cultural references, honorifics,
+              idioms, and sentence structure. A good evaluator checks whether
+              an answer sounds natural to Bengali speakers and whether it
+              respects the original context.
+            </p>
+            <a class="blog-link" href="#contact">Discuss a project →</a>
+          </article>
+
+          <article class="blog-card">
+            <span class="blog-date">QUALITY REVIEW</span>
+            <h3>Five Things to Check in an AI-Generated Answer</h3>
+            <p>
+              A useful review should examine factual accuracy, relevance,
+              completeness, clarity, and instruction-following. An answer can
+              be grammatically correct but still fail because it ignores the
+              user’s request or confidently presents unsupported information.
+            </p>
+            <a class="blog-link" href="#contact">Discuss a project →</a>
+          </article>
+
+          <article class="blog-card">
+            <span class="blog-date">WEB DEVELOPMENT</span>
+            <h3>What AI-Assisted Development Means to Me</h3>
+            <p>
+              AI-assisted development helps turn ideas into prototypes faster,
+              but the developer remains responsible for testing, debugging,
+              usability, security, and accuracy. My approach combines AI tools
+              with careful review and practical browser-based implementation.
+            </p>
+            <a class="blog-link" href="#contact">Discuss a project →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">FAQ</div>
+          <h2>Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>What type of remote work do you accept?</summary>
+            <p class="faq-answer">
+              I accept Bengali AI evaluation, data annotation, proofreading,
+              translation, fact-checking, MS Office, virtual assistance, and
+              basic web-development projects.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can you work with detailed guidelines?</summary>
+            <p class="faq-answer">
+              Yes. I am comfortable following structured instructions,
+              evaluation criteria, formatting rules, and quality-control
+              procedures.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do you offer a free trial project?</summary>
+            <p class="faq-answer">
+              I can discuss a small, clearly defined sample task before a larger
+              project begins. Any substantial trial work should be agreed upon
+              fairly in advance.
+            </p>
+          </details>
+
+          <details>
+            <summary>How can I contact you?</summary>
+            <p class="faq-answer">
+              You can use the contact form, email, phone, or WhatsApp button
+              below.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Contact</div>
+          <h2>Let’s work together.</h2>
+          <p>
+            Send a short description of your project and I will review the
+            requirements.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label>
+                  Do not fill this out:
+                  <input name="bot-field" />
+                </label>
+              </p>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Project subject"
+                required
+              />
+
+              <textarea
+                name="message"
+                placeholder="Tell me about your project"
+                required
+              ></textarea>
+
+              <button class="button button-primary" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-box contact-details">
+            <p>📧 Email:
+              <a href="mailto:imdselim95@gmail.com">
+                imdselim95@gmail.com
+              </a>
+            </p>
+
+            <p>📞 Phone:
+              <a href="tel:+8801345468615">
+                +880 1345 468615
+              </a>
+            </p>
+
+            <p>📍 Location: Rajshahi, Bangladesh</p>
+
+            <div class="socials">
+              <a
+                class="social-link"
+                href="https://github.com/epicbite9"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/in/selim-reza-2578313a1"
+                target="_blank"
+                rel="noopener"
+              >
+                LinkedIn
+              </a>
+            </div>
+
+            <div class="buttons">
+              <a
+                class="button button-primary"
+                href="https://wa.me/8801345468615"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp Me
+              </a>
+
+              <a
+                class="button button-outline"
+                href="Md-Selim-Reza-CV.pdf"
+                download
+              >
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="container legal">
+        <div class="section-label">Privacy Policy</div>
+        <h2>Privacy Policy</h2>
+
+        <p>
+          This website does not intentionally collect personal information
+          unless you voluntarily submit it through the contact form, email,
+          phone, or WhatsApp.
+        </p>
+
+        <h3>Contact form</h3>
+        <p>
+          Information submitted through the contact form may include your name,
+          email address, subject, and message. This information is used only to
+          respond to your inquiry and discuss possible work.
+        </p>
+
+        <h3>External links</h3>
+        <p>
+          This website contains links to external platforms such as GitHub,
+          LinkedIn, WhatsApp, Netlify, and MyImageTools. Their own policies
+          apply when you visit those services.
+        </p>
+
+        <h3>Updates</h3>
+        <p>
+          This policy may be updated when the website or contact process changes.
+        </p>
+      </div>
+    </section>
+
+    <section id="terms">
+      <div class="container legal">
+        <div class="section-label">Terms of Service</div>
+        <h2>Terms of Service</h2>
+
+        <p>
+          The content on this website is provided for general professional and
+          informational purposes. Service details, availability, deadlines,
+          pricing, revisions, and deliverables must be agreed upon before work
+          begins.
+        </p>
+
+        <h3>Work samples</h3>
+        <p>
+          Samples marked as demonstrations are examples created to show
+          capabilities. They do not represent paid client work unless clearly
+          stated otherwise.
+        </p>
+
+        <h3>Payments</h3>
+        <p>
+          Payment terms should be agreed upon in writing before a project starts.
+          Prices shown on this website are starting prices and may change
+          depending on project requirements.
+        </p>
+
+        <h3>Contact</h3>
+        <p>
+          Sending an inquiry does not create a formal client relationship.
+          A project begins only after both parties agree on the scope and terms.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> MD. SELIM REZA. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+  </html>
