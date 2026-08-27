@@ -3,38 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>MD. SELIM REZA | Bengali AI Evaluator</title>
-
-  <meta
-    name="description"
-    content="MD. Selim Reza is a Bengali AI evaluator, data annotation assistant, translator, proofreader, and AI-assisted frontend developer from Rajshahi, Bangladesh."
-  />
-
-  <meta property="og:title" content="MD. SELIM REZA | Bengali AI Evaluator" />
-  <meta
-    property="og:description"
-    content="Bengali AI evaluation, data annotation, proofreading, translation, MS Office, and web support."
-  />
-  <meta property="og:type" content="website" />
+  <title>MD. SELIM REZA | Bengali AI Evaluator & Web Specialist</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="MD. Selim Reza - Bengali AI evaluator, data annotation assistant, and frontend developer." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --background: #08111f;
-      --surface: #101d31;
-      --surface-2: #14243c;
-      --text: #f5f8ff;
-      --muted: #aab7ca;
-      --primary: #65e6b7;
-      --secondary: #80aaff;
-      --border: rgba(255, 255, 255, 0.13);
-      --max-width: 1150px;
+      --bg-dark: #030712;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --primary: #10b981; /* Emerald */
+      --primary-glow: rgba(16, 185, 129, 0.3);
+      --secondary: #6366f1; /* Indigo */
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
     }
 
     html {
@@ -42,1179 +40,570 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(101, 230, 183, 0.13), transparent 30%),
-        radial-gradient(circle at top left, rgba(128, 170, 255, 0.12), transparent 30%),
-        var(--background);
-      line-height: 1.65;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: auto;
-    }
-
-    .navbar {
-      position: sticky;
+    /* Animated Background Background */
+    .bg-blobs {
+      position: fixed;
       top: 0;
-      z-index: 999;
-      background: rgba(8, 17, 31, 0.91);
-      backdrop-filter: blur(14px);
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      filter: blur(80px);
+    }
+
+    .blob {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: var(--primary-glow);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: move 20s infinite alternate;
+    }
+
+    .blob-2 {
+      right: -100px;
+      top: -100px;
+      background: rgba(99, 102, 241, 0.2);
+      animation-duration: 25s;
+    }
+
+    @keyframes move {
+      from { transform: translate(0, 0); }
+      to { transform: translate(100px, 100px); }
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: var(--transition);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #10b981, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
+      padding: 1.2rem 0;
     }
 
     .nav-inner {
-      min-height: 72px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
     }
 
     .logo {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      white-space: nowrap;
+      letter-spacing: -1px;
+      text-decoration: none;
+      color: var(--text-main);
     }
 
-    .logo span,
-    .green {
-      color: var(--primary);
-    }
+    .logo span { color: var(--primary); }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 24px;
+      gap: 2rem;
       list-style: none;
     }
 
     .nav-links a {
-      color: var(--muted);
-      font-size: 0.93rem;
-      transition: 0.2s;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
     }
 
-    .nav-links a:hover {
-      color: var(--primary);
-    }
+    .nav-links a:hover { color: var(--primary); }
 
-    .menu-button {
+    .menu-btn {
       display: none;
-      color: var(--text);
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 7px 11px;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
       cursor: pointer;
     }
 
-    section {
-      padding: 90px 0;
-    }
-
+    /* Hero Section */
     .hero {
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-grid {
+      padding: 180px 0 100px;
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
       align-items: center;
-      gap: 70px;
     }
 
-    .availability {
+    .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
       color: var(--primary);
-      border: 1px solid rgba(101, 230, 183, 0.3);
-      background: rgba(101, 230, 183, 0.09);
-      border-radius: 30px;
-      padding: 8px 14px;
-      margin-bottom: 22px;
-      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
     }
 
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
+    .pulse {
+      width: 8px;
+      height: 8px;
       background: var(--primary);
+      border-radius: 50%;
       box-shadow: 0 0 12px var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 1; }
+      70% { transform: scale(1.5); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
     }
 
     h1 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 1.06;
-      letter-spacing: -3px;
-      margin-bottom: 22px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -2px;
     }
 
-    h1 span {
-      color: var(--primary);
+    .hero-p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
     }
 
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: var(--secondary);
-      font-size: 1.18rem;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
-
-    .hero-text,
-    .section-heading p,
-    .card p,
-    .about-text,
-    .blog-card p,
-    .faq-answer,
-    .legal p {
-      color: var(--muted);
-    }
-
-    .hero-text {
-      max-width: 680px;
-      font-size: 1.08rem;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
+    .btn-group {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 1rem;
     }
 
-    .button {
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
       display: inline-block;
-      padding: 12px 18px;
-      border-radius: 9px;
-      font-weight: bold;
-      transition: 0.2s;
     }
 
-    .button-primary {
-      color: #061117;
+    .btn-primary {
       background: var(--primary);
+      color: #000;
     }
 
-    .button-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(101, 230, 183, 0.25);
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px var(--primary-glow);
     }
 
-    .button-outline {
+    .btn-outline {
       border: 1px solid var(--border);
-      color: var(--text);
+      color: var(--text-main);
+      background: var(--glass-bg);
     }
 
-    .button-outline:hover {
+    .btn-outline:hover {
       border-color: var(--primary);
-      color: var(--primary);
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .hero-image {
+      position: relative;
     }
 
     .profile-card {
-      padding: 30px;
-      text-align: center;
-      background: linear-gradient(145deg, rgba(101, 230, 183, 0.13), rgba(128, 170, 255, 0.12));
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      padding: 2rem;
+      border-radius: 30px;
+      backdrop-filter: blur(20px);
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
-    .profile-photo {
-      width: 205px;
-      height: 205px;
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
       object-fit: cover;
-      object-position: center;
-      margin: 0 auto 22px;
-      border-radius: 50%;
-      border: 5px solid rgba(101, 230, 183, 0.65);
-      background: white;
+      margin-bottom: 1.5rem;
+      border: 4px solid var(--border);
     }
 
-    .profile-card p {
-      color: var(--muted);
-    }
+    /* Section Styling */
+    section { padding: 100px 0; }
 
-    .location {
-      color: var(--primary) !important;
-      margin-top: 13px;
-    }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 38px;
-    }
-
-    .section-label {
+    .section-tag {
       color: var(--primary);
-      font-size: 0.8rem;
-      font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 9px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      display: block;
+      margin-bottom: 1rem;
     }
 
-    .about-grid,
-    .contact-grid {
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Bento Grid for Services */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      border-color: var(--primary);
+      transform: translateY(-10px);
+      background: rgba(17, 24, 39, 0.9);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Pricing & Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+      background: var(--glass-bg);
+      border-radius: 20px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+
+    /* Form Styling */
+    .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 22px;
+      gap: 4rem;
     }
 
-    .card,
-    .blog-card,
-    .price-card,
-    .contact-box,
-    .sample {
-      background: rgba(255, 255, 255, 0.065);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 26px;
-    }
-
-    .facts {
-      list-style: none;
-    }
-
-    .facts li {
-      padding: 11px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .facts li:last-child {
-      border-bottom: 0;
-    }
-
-    .facts strong {
-      color: var(--text);
-      display: inline-block;
-      min-width: 115px;
-    }
-
-    .three-column,
-    .pricing-grid,
-    .blog-grid,
-    .samples-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .price-card {
-      text-align: center;
-    }
-
-    .price {
-      color: var(--primary);
-      font-size: 1.7rem;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    .price-card ul {
-      list-style: none;
-      text-align: left;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .price-card li {
-      margin: 7px 0;
-    }
-
-    .price-card li::before {
-      content: "✓ ";
-      color: var(--primary);
-    }
-
-    .project-link,
-    .blog-link,
-    .social-link {
-      display: inline-block;
-      color: var(--primary);
-      font-weight: bold;
-      margin-top: 16px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill {
-      padding: 9px 13px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .sample {
-      border-left: 4px solid var(--primary);
-    }
-
-    .sample small,
-    .blog-date {
-      color: var(--primary);
-      font-weight: bold;
-    }
-
-    .sample p {
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    .blog-card {
-      min-height: 275px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card p {
-      flex: 1;
-    }
-
-    .blog-date {
-      display: block;
-      font-size: 0.8rem;
-      margin-bottom: 10px;
-    }
-
-    form {
-      display: grid;
-      gap: 13px;
-    }
-
-    input,
-    textarea {
+    input, textarea {
       width: 100%;
-      padding: 13px;
-      color: var(--text);
-      background: rgba(0, 0, 0, 0.2);
+      background: var(--glass-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      font: inherit;
+      padding: 1.2rem;
+      border-radius: 12px;
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      outline: none;
     }
 
-    textarea {
-      min-height: 145px;
-      resize: vertical;
+    input:focus, textarea:focus {
+      border-color: var(--primary);
     }
 
-    input:focus,
-    textarea:focus {
-      outline: 2px solid var(--primary);
-      border-color: transparent;
+    .contact-info-card {
+      background: linear-gradient(145deg, var(--bg-card), rgba(99, 102, 241, 0.05));
+      padding: 3rem;
+      border-radius: 24px;
+      border: 1px solid var(--border);
     }
 
-    .contact-details {
-      display: grid;
-      align-content: start;
-      gap: 14px;
-      color: var(--muted);
-    }
-
-    .contact-details a {
-      color: var(--primary);
-      word-break: break-word;
-    }
-
-    .socials {
+    .info-item {
       display: flex;
-      gap: 12px;
-      margin-top: 10px;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    .social-link {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 9px 13px;
-      margin-top: 0;
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--glass-bg);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
     }
 
-    .faq-list {
-      display: grid;
-      gap: 12px;
-      max-width: 850px;
-    }
-
-    details {
-      background: rgba(255, 255, 255, 0.065);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 17px 20px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .faq-answer {
-      padding-top: 12px;
-    }
-
-    .legal {
-      max-width: 850px;
-    }
-
-    .legal h3 {
-      margin-top: 22px;
-    }
-
+    /* Footer */
     footer {
-      padding: 25px 0;
-      text-align: center;
-      color: var(--muted);
+      padding: 4rem 0;
       border-top: 1px solid var(--border);
-      font-size: 0.9rem;
+      text-align: center;
+      color: var(--text-muted);
     }
 
-    @media (max-width: 850px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .three-column,
-      .pricing-grid,
-      .blog-grid,
-      .samples-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .profile-card {
-        max-width: 430px;
-        margin: auto;
-      }
-    }
-
-    @media (max-width: 620px) {
-      section {
-        padding: 65px 0;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 4%;
-        right: 4%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 10px;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 10px;
-      }
-
-      .three-column,
-      .pricing-grid,
-      .blog-grid,
-      .samples-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        letter-spacing: -1.5px;
-      }
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+      .hero-p { margin: 0 auto 2.5rem; }
+      .btn-group { justify-content: center; }
+      .contact-container { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .menu-btn { display: block; }
     }
   </style>
 </head>
-
 <body>
-  <header class="navbar">
+
+  <div class="bg-blobs">
+    <div class="blob"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <nav class="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="logo">MD. SELIM<span>.</span></a>
-
-      <button class="menu-button" id="menuButton" aria-label="Open menu">
-        ☰
-      </button>
-
-      <ul class="nav-links" id="navLinks">
+      <a href="#" class="logo">SELIM<span>REZA.</span></a>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#samples">Samples</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <li><a href="#projects">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="menu-btn"><i class="fas fa-bars"></i></button>
     </div>
-  </header>
+  </nav>
 
-  <main>
+  <main class="container">
+    
+    <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="availability">
-            <span class="dot"></span>
-            Available for remote work
-          </div>
-
-          <h1>
-            Bengali AI &<br />
-            <span>Web Specialist</span>
-          </h1>
-
-          <p class="subtitle">
-            Bengali AI Evaluator | Data Annotation Assistant
-          </p>
-
-          <p class="hero-text">
-            Detail-oriented and tech-savvy professional with four years of
-            experience in Microsoft Office, AI-assisted web development,
-            Bengali language analysis, proofreading, fact-checking, and
-            browser-based web projects.
-          </p>
-
-          <div class="buttons">
-            <a class="button button-primary" href="#contact">Hire Me</a>
-            <a class="button button-outline" href="Md-Selim-Reza-CV.pdf" download>
-              Download CV
-            </a>
-          </div>
+      <div class="hero-content reveal">
+        <div class="badge">
+          <span class="pulse"></span> Available for Remote Projects
         </div>
-
+        <h1>Bengali AI & <br><span class="gradient-text">Web Specialist</span></h1>
+        <p class="hero-p">Bridging the gap between Bengali linguistic nuance and cutting-edge AI technology. Specialist in data evaluation, annotation, and frontend solutions.</p>
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary">Start a Project</a>
+          <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Get Resume</a>
+        </div>
+      </div>
+      
+      <div class="hero-image reveal">
         <div class="profile-card">
-          <img
-            src="profile-photo.jpg"
-            alt="Professional portrait of MD. Selim Reza"
-            class="profile-photo"
-          />
+          <img src="profile-photo.jpg" alt="Selim Reza" class="profile-img">
           <h2>MD. SELIM REZA</h2>
-          <p>Bengali AI & Content Evaluation Specialist</p>
-          <p class="location">📍 Rajshahi, Bangladesh</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">About Me</div>
-          <h2>Language expertise combined with technology.</h2>
-          <p>
-            I help improve digital content and AI systems through careful
-            Bengali language evaluation, research, proofreading, translation,
-            and instruction-based review.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="card">
-            <h3>Professional Summary</h3>
-            <p>
-              I am a native Bengali speaker with professional working proficiency
-              in English. My background includes four years of Microsoft Office
-              experience, AI-assisted frontend development, fact-checking,
-              critical reading, documentation, and technical problem-solving.
-            </p>
-            <br />
-            <p>
-              My knowledge of classical and modern Bengali literature helps me
-              understand grammar, metaphors, cultural references, context, tone,
-              and natural language expression.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Quick Information</h3>
-            <ul class="facts">
-              <li><strong>Location:</strong> Rajshahi, Bangladesh</li>
-              <li><strong>Languages:</strong> Bengali, English</li>
-              <li><strong>Education:</strong> HSC, result pending</li>
-              <li><strong>Experience:</strong> 4 years</li>
-              <li><strong>Work type:</strong> Remote, freelance, contract</li>
-            </ul>
+          <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Bengali AI Evaluator</p>
+          <p><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</p>
+          <div class="stats-grid" style="grid-template-columns: 1fr 1fr; margin-top: 2rem;">
+            <div class="stat-item" style="padding: 1rem;">
+              <span class="stat-number" style="font-size: 1.5rem;">4+</span>
+              <small>Years Exp.</small>
+            </div>
+            <div class="stat-item" style="padding: 1rem;">
+              <span class="stat-number" style="font-size: 1.5rem;">100%</span>
+              <small>Quality</small>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Services</div>
-          <h2>How I can help</h2>
-          <p>
-            Flexible support for AI projects, Bengali content, documentation,
-            research, and basic frontend work.
-          </p>
+      <span class="section-tag reveal">Expertise</span>
+      <h2 class="section-title reveal">Premium Services</h2>
+      <div class="grid">
+        <div class="card reveal">
+          <i class="fas fa-brain"></i>
+          <h3>AI Evaluation</h3>
+          <p>Analyzing AI responses for Bengali linguistic accuracy, cultural relevance, and safety guidelines.</p>
         </div>
-
-        <div class="three-column">
-          <div class="card">
-            <div class="service-icon">🧠</div>
-            <h3>Bengali AI Evaluation</h3>
-            <p>
-              Review AI-generated Bengali responses for accuracy, relevance,
-              grammar, tone, context, safety, and completeness.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="service-icon">✍️</div>
-            <h3>Proofreading</h3>
-            <p>
-              Correct Bengali spelling, grammar, punctuation, sentence
-              structure, and unnatural machine-generated writing.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="service-icon">🌐</div>
-            <h3>Translation</h3>
-            <p>
-              Translate and localize content between Bengali and English while
-              preserving meaning, tone, and cultural context.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="service-icon">📊</div>
-            <h3>Data Annotation</h3>
-            <p>
-              Perform structured labeling, comparison, categorization, quality
-              review, and guideline-based content evaluation.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="service-icon">🗂️</div>
-            <h3>MS Word & Excel</h3>
-            <p>
-              Create documents, format reports, organize information, and
-              prepare clean spreadsheets.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="service-icon">💻</div>
-            <h3>Web Development</h3>
-            <p>
-              Build, test, debug, and deploy simple responsive websites and
-              browser-based tools.
-            </p>
-          </div>
+        <div class="card reveal">
+          <i class="fas fa-language"></i>
+          <h3>Localization</h3>
+          <p>Expert translation and proofreading that preserves the soul of the Bengali language.</p>
+        </div>
+        <div class="card reveal">
+          <i class="fas fa-code"></i>
+          <h3>Web Dev</h3>
+          <p>Modern, responsive frontend development with a focus on UI/UX and clean code architectures.</p>
+        </div>
+        <div class="card reveal">
+          <i class="fas fa-database"></i>
+          <h3>Data Annotation</h3>
+          <p>High-precision labeling and structured data organization for machine learning models.</p>
         </div>
       </div>
     </section>
 
-    <section id="pricing">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Pricing</div>
-          <h2>Flexible starting prices</h2>
-          <p>
-            Final pricing depends on project length, complexity, deadline, and
-            required revisions.
-          </p>
-        </div>
-
-        <div class="pricing-grid">
-          <div class="price-card">
-            <h3>Language Support</h3>
-            <div class="price">From $5</div>
-            <ul>
-              <li>Proofreading</li>
-              <li>Short translation</li>
-              <li>Grammar correction</li>
-            </ul>
-            <a class="button button-outline" href="#contact">Request Quote</a>
-          </div>
-
-          <div class="price-card">
-            <h3>AI & Data Work</h3>
-            <div class="price">From $8</div>
-            <ul>
-              <li>AI response evaluation</li>
-              <li>Data annotation</li>
-              <li>Fact-checking</li>
-            </ul>
-            <a class="button button-outline" href="#contact">Request Quote</a>
-          </div>
-
-          <div class="price-card">
-            <h3>Web Support</h3>
-            <div class="price">From $20</div>
-            <ul>
-              <li>Landing pages</li>
-              <li>Website updates</li>
-              <li>Basic debugging</li>
-            </ul>
-            <a class="button button-outline" href="#contact">Request Quote</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Project Section -->
     <section id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Projects</div>
-          <h2>Selected project</h2>
+      <span class="section-tag reveal">Portfolio</span>
+      <h2 class="section-title reveal">Featured Work</h2>
+      <div class="card reveal" style="display: flex; flex-direction: row; gap: 2rem; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+          <h3 class="gradient-text" style="font-size: 2rem;">MyImageTools</h3>
+          <p style="margin: 1.5rem 0;">A comprehensive browser-based suite for image processing. Built with performance and privacy in mind, allowing users to crop, compress, and convert images instantly.</p>
+          <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <span class="badge" style="margin: 0;">HTML5</span>
+            <span class="badge" style="margin: 0;">Tailwind</span>
+            <span class="badge" style="margin: 0;">JavaScript</span>
+          </div>
+          <a href="https://myimagetools.netlify.app" target="_blank" class="btn btn-outline">View Live Project <i class="fas fa-external-link-alt"></i></a>
         </div>
-
-        <div class="card">
-          <h3>MyImageTools</h3>
-          <p>
-            A browser-based image utility platform for compression, resizing,
-            cropping, format conversion, background removal, and image
-            upscaling. The project demonstrates frontend development,
-            client-side processing, UI design, debugging, and Netlify
-            deployment.
-          </p>
-          <a
-            class="project-link"
-            href="https://myimagetools.netlify.app"
-            target="_blank"
-            rel="noopener"
-          >
-            Visit MyImageTools →
-          </a>
+        <div style="flex: 1; min-width: 300px; background: var(--bg-dark); height: 250px; border-radius: 15px; border: 1px solid var(--border);">
+            <!-- Placeholder for project screenshot -->
+             <div style="display: flex; height: 100%; align-items: center; justify-content: center; color: var(--border);">
+                <i class="fas fa-laptop-code fa-4x"></i>
+             </div>
         </div>
       </div>
     </section>
 
-    <section id="samples">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Demonstration Work</div>
-          <h2>Example work samples</h2>
-          <p>
-            These are demonstration samples created to show the type of work I
-            can provide.
-          </p>
-        </div>
-
-        <div class="samples-grid">
-          <div class="sample">
-            <small>01 · AI Response Evaluation</small>
-            <p>
-              Compare two Bengali AI answers and select the stronger response
-              based on accuracy, relevance, completeness, clarity, and
-              instruction-following.
-            </p>
-          </div>
-
-          <div class="sample">
-            <small>02 · Bengali Proofreading</small>
-            <p>
-              Identify spelling, punctuation, grammar, and unnatural sentence
-              construction, then provide a clear corrected version.
-            </p>
-          </div>
-
-          <div class="sample">
-            <small>03 · Translation Review</small>
-            <p>
-              Check whether an English-to-Bengali translation preserves the
-              original meaning, tone, context, and cultural intent.
-            </p>
-          </div>
-
-          <div class="sample">
-            <small>04 · Fact-Checking</small>
-            <p>
-              Separate verifiable information from unsupported claims and
-              explain which parts require stronger evidence.
-            </p>
-          </div>
-
-          <div class="sample">
-            <small>05 · Tone and Context Review</small>
-            <p>
-              Check whether Bengali writing is formal, conversational,
-              respectful, instructional, persuasive, or culturally appropriate.
-            </p>
-          </div>
-
-          <div class="sample">
-            <small>06 · Excel Data Organization</small>
-            <p>
-              Organize inconsistent information into clean columns, standardize
-              formatting, remove duplicates, and prepare readable reports.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Skills</div>
-          <h2>Technical and professional skills</h2>
-        </div>
-
-        <div class="skills">
-          <span class="skill">Bengali AI Evaluation</span>
-          <span class="skill">Data Annotation</span>
-          <span class="skill">Bengali Proofreading</span>
-          <span class="skill">Bengali-English Translation</span>
-          <span class="skill">Fact-Checking</span>
-          <span class="skill">Critical Reading</span>
-          <span class="skill">Content Evaluation</span>
-          <span class="skill">MS Word</span>
-          <span class="skill">MS Excel</span>
-          <span class="skill">PowerPoint</span>
-          <span class="skill">Google Workspace</span>
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">AI-Assisted Development</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">Netlify</span>
-          <span class="skill">Technical Debugging</span>
-          <span class="skill">Responsive Web Design</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="blog">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Blog</div>
-          <h2>Useful thoughts on AI and language</h2>
-        </div>
-
-        <div class="blog-grid">
-          <article class="blog-card">
-            <span class="blog-date">AI & LANGUAGE</span>
-            <h3>Why Bengali Context Matters in AI Evaluation</h3>
-            <p>
-              Bengali AI evaluation requires more than checking spelling.
-              Meaning can change through tone, cultural references, honorifics,
-              idioms, and sentence structure. A good evaluator checks whether
-              an answer sounds natural to Bengali speakers and whether it
-              respects the original context.
-            </p>
-            <a class="blog-link" href="#contact">Discuss a project →</a>
-          </article>
-
-          <article class="blog-card">
-            <span class="blog-date">QUALITY REVIEW</span>
-            <h3>Five Things to Check in an AI-Generated Answer</h3>
-            <p>
-              A useful review should examine factual accuracy, relevance,
-              completeness, clarity, and instruction-following. An answer can
-              be grammatically correct but still fail because it ignores the
-              user’s request or confidently presents unsupported information.
-            </p>
-            <a class="blog-link" href="#contact">Discuss a project →</a>
-          </article>
-
-          <article class="blog-card">
-            <span class="blog-date">WEB DEVELOPMENT</span>
-            <h3>What AI-Assisted Development Means to Me</h3>
-            <p>
-              AI-assisted development helps turn ideas into prototypes faster,
-              but the developer remains responsible for testing, debugging,
-              usability, security, and accuracy. My approach combines AI tools
-              with careful review and practical browser-based implementation.
-            </p>
-            <a class="blog-link" href="#contact">Discuss a project →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">FAQ</div>
-          <h2>Frequently asked questions</h2>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>What type of remote work do you accept?</summary>
-            <p class="faq-answer">
-              I accept Bengali AI evaluation, data annotation, proofreading,
-              translation, fact-checking, MS Office, virtual assistance, and
-              basic web-development projects.
-            </p>
-          </details>
-
-          <details>
-            <summary>Can you work with detailed guidelines?</summary>
-            <p class="faq-answer">
-              Yes. I am comfortable following structured instructions,
-              evaluation criteria, formatting rules, and quality-control
-              procedures.
-            </p>
-          </details>
-
-          <details>
-            <summary>Do you offer a free trial project?</summary>
-            <p class="faq-answer">
-              I can discuss a small, clearly defined sample task before a larger
-              project begins. Any substantial trial work should be agreed upon
-              fairly in advance.
-            </p>
-          </details>
-
-          <details>
-            <summary>How can I contact you?</summary>
-            <p class="faq-answer">
-              You can use the contact form, email, phone, or WhatsApp button
-              below.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-
+    <!-- Contact Section -->
     <section id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-label">Contact</div>
-          <h2>Let’s work together.</h2>
-          <p>
-            Send a short description of your project and I will review the
-            requirements.
-          </p>
-        </div>
+      <span class="section-tag reveal">Inquiry</span>
+      <h2 class="section-title reveal">Let's Work Together</h2>
+      
+      <div class="contact-container">
+        <form class="reveal" action="#" method="POST">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="text" placeholder="Subject">
+          <textarea rows="5" placeholder="Project details..."></textarea>
+          <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
 
-        <div class="contact-grid">
-          <div class="contact-box">
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p hidden>
-                <label>
-                  Do not fill this out:
-                  <input name="bot-field" />
-                </label>
-              </p>
-
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                required
-              />
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                required
-              />
-
-              <input
-                type="text"
-                name="subject"
-                placeholder="Project subject"
-                required
-              />
-
-              <textarea
-                name="message"
-                placeholder="Tell me about your project"
-                required
-              ></textarea>
-
-              <button class="button button-primary" type="submit">
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          <div class="contact-box contact-details">
-            <p>📧 Email:
-              <a href="mailto:imdselim95@gmail.com">
-                imdselim95@gmail.com
-              </a>
-            </p>
-
-            <p>📞 Phone:
-              <a href="tel:+8801345468615">
-                +880 1345 468615
-              </a>
-            </p>
-
-            <p>📍 Location: Rajshahi, Bangladesh</p>
-
-            <div class="socials">
-              <a
-                class="social-link"
-                href="https://github.com/epicbite9"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub
-              </a>
-
-              <a
-                class="social-link"
-                href="https://www.linkedin.com/in/selim-reza-2578313a1"
-                target="_blank"
-                rel="noopener"
-              >
-                LinkedIn
-              </a>
+        <div class="contact-info-card reveal">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Email Me</p>
+              <a href="mailto:imdselim95@gmail.com" style="color: white; text-decoration: none; font-weight: 600;">imdselim95@gmail.com</a>
             </div>
-
-            <div class="buttons">
-              <a
-                class="button button-primary"
-                href="https://wa.me/8801345468615"
-                target="_blank"
-                rel="noopener"
-              >
-                WhatsApp Me
-              </a>
-
-              <a
-                class="button button-outline"
-                href="Md-Selim-Reza-CV.pdf"
-                download
-              >
-                Download CV
-              </a>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">WhatsApp</p>
+              <a href="https://wa.me/8801345468615" style="color: white; text-decoration: none; font-weight: 600;">+880 1345 468615</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">LinkedIn</p>
+              <a href="#" style="color: white; text-decoration: none; font-weight: 600;">selim-reza-ai</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="privacy">
-      <div class="container legal">
-        <div class="section-label">Privacy Policy</div>
-        <h2>Privacy Policy</h2>
-
-        <p>
-          This website does not intentionally collect personal information
-          unless you voluntarily submit it through the contact form, email,
-          phone, or WhatsApp.
-        </p>
-
-        <h3>Contact form</h3>
-        <p>
-          Information submitted through the contact form may include your name,
-          email address, subject, and message. This information is used only to
-          respond to your inquiry and discuss possible work.
-        </p>
-
-        <h3>External links</h3>
-        <p>
-          This website contains links to external platforms such as GitHub,
-          LinkedIn, WhatsApp, Netlify, and MyImageTools. Their own policies
-          apply when you visit those services.
-        </p>
-
-        <h3>Updates</h3>
-        <p>
-          This policy may be updated when the website or contact process changes.
-        </p>
-      </div>
-    </section>
-
-    <section id="terms">
-      <div class="container legal">
-        <div class="section-label">Terms of Service</div>
-        <h2>Terms of Service</h2>
-
-        <p>
-          The content on this website is provided for general professional and
-          informational purposes. Service details, availability, deadlines,
-          pricing, revisions, and deliverables must be agreed upon before work
-          begins.
-        </p>
-
-        <h3>Work samples</h3>
-        <p>
-          Samples marked as demonstrations are examples created to show
-          capabilities. They do not represent paid client work unless clearly
-          stated otherwise.
-        </p>
-
-        <h3>Payments</h3>
-        <p>
-          Payment terms should be agreed upon in writing before a project starts.
-          Prices shown on this website are starting prices and may change
-          depending on project requirements.
-        </p>
-
-        <h3>Contact</h3>
-        <p>
-          Sending an inquiry does not create a formal client relationship.
-          A project begins only after both parties agree on the scope and terms.
-        </p>
-      </div>
-    </section>
   </main>
 
   <footer>
     <div class="container">
-      © <span id="year"></span> MD. SELIM REZA. All rights reserved.
+      <p>&copy; <span id="year"></span> MD. SELIM REZA. Developed with Precision.</p>
     </div>
   </footer>
 
   <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
+    // Update Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    menuButton.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
+    // Scroll Reveal Animation
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          el.classList.add('active');
+        }
       });
-    });
+    };
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    window.addEventListener('scroll', reveal);
+    // Initial check
+    reveal();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '70px';
+      navLinks.style.left = '0';
+      navLinks.style.width = '100%';
+      navLinks.style.background = 'var(--bg-dark)';
+      navLinks.style.padding = '2rem';
+    });
   </script>
 </body>
-  </html>
+</html>
