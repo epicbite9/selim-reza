@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MD. SELIM REZA | Bengali AI Evaluator & Web Specialist</title>
-  <!-- ADD FAVICON HERE -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
-  <!-- SEO -->
-  <meta name="description" content="MD. Selim Reza - Bengali AI evaluator, data annotation assistant, and frontend developer." />
+  <title>MD. SELIM REZA | Bengali AI Evaluator & Specialist</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="MD. Selim Reza is a Bengali AI evaluator, data annotation assistant, translator, and frontend developer from Rajshahi, Bangladesh." />
+  <meta property="og:title" content="MD. SELIM REZA | Bengali AI Evaluator" />
   
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,398 +22,111 @@
     :root {
       --bg-dark: #030712;
       --bg-card: rgba(17, 24, 39, 0.7);
-      --primary: #10b981; /* Emerald */
-      --primary-glow: rgba(16, 185, 129, 0.3);
-      --secondary: #6366f1; /* Indigo */
+      --primary: #10b981; 
+      --primary-glow: rgba(16, 185, 129, 0.2);
+      --secondary: #6366f1;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --border: rgba(255, 255, 255, 0.08);
-      --glass-bg: rgba(255, 255, 255, 0.03);
-      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --glass: rgba(255, 255, 255, 0.03);
+      --transition: all 0.3s ease;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Outfit', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    /* Animated Background */
+    .bg-blobs { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; filter: blur(80px); }
+    .blob { position: absolute; width: 500px; height: 500px; background: var(--primary-glow); border-radius: 50%; opacity: 0.3; animation: move 20s infinite alternate; }
+    .blob-2 { right: -100px; top: -100px; background: rgba(99, 102, 241, 0.15); animation-duration: 25s; }
+    @keyframes move { from { transform: translate(0, 0); } to { transform: translate(100px, 100px); } }
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Animated Background Background */
-    .bg-blobs {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      filter: blur(80px);
-    }
-
-    .blob {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: var(--primary-glow);
-      border-radius: 50%;
-      opacity: 0.4;
-      animation: move 20s infinite alternate;
-    }
-
-    .blob-2 {
-      right: -100px;
-      top: -100px;
-      background: rgba(99, 102, 241, 0.2);
-      animation-duration: 25s;
-    }
-
-    @keyframes move {
-      from { transform: translate(0, 0); }
-      to { transform: translate(100px, 100px); }
-    }
-
-    /* Utility Classes */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: var(--transition);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #10b981, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    /* Layout */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
     /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(3, 7, 18, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 1.2rem 0;
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      text-decoration: none;
-      color: var(--text-main);
-    }
-
+    .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.4rem; font-weight: 800; text-decoration: none; color: white; }
     .logo span { color: var(--primary); }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-    }
-
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; transition: var(--transition); }
     .nav-links a:hover { color: var(--primary); }
+    .menu-btn { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-    .menu-btn {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
+    /* Hero */
+    .hero { padding: 180px 0 100px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+    .availability { display: inline-flex; align-items: center; gap: 8px; background: var(--glass); border: 1px solid var(--primary); color: var(--primary); padding: 6px 15px; border-radius: 100px; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
+    .gradient-text { background: linear-gradient(90deg, var(--primary), #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-text { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 600px; }
 
-    /* Hero Section */
-    .hero {
-      padding: 180px 0 100px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-    }
+    /* Buttons */
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.8rem 1.8rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
+    .btn-primary { background: var(--primary); color: #000; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
+    .btn-outline { border: 1px solid var(--border); color: white; background: var(--glass); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--glass-bg);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
+    /* Profile Card */
+    .profile-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 30px; text-align: center; backdrop-filter: blur(10px); }
+    .profile-img { width: 200px; height: 200px; border-radius: 50%; border: 4px solid var(--primary); object-fit: cover; margin-bottom: 1.5rem; background: white; }
 
-    .pulse {
-      width: 8px;
-      height: 8px;
-      background: var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--primary);
-      animation: pulse 2s infinite;
-    }
+    /* Bento Grid Elements */
+    .section-head { margin-bottom: 3.5rem; }
+    .tag { color: var(--primary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; border-radius: 20px; transition: var(--transition); }
+    .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+    .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1.2rem; }
 
-    @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 1; }
-      70% { transform: scale(1.5); opacity: 0; }
-      100% { transform: scale(0.95); opacity: 0; }
-    }
+    /* Facts List */
+    .facts { list-style: none; margin-top: 1rem; }
+    .facts li { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; }
+    .facts li span { color: var(--text-muted); }
+    .facts li strong { color: var(--primary); }
 
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -2px;
-    }
+    /* Skills Badges */
+    .skills-flex { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag { background: var(--glass); border: 1px solid var(--border); padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); }
 
-    .hero-p {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-    }
+    /* Pricing */
+    .price { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0; }
+    .price-list { list-style: none; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .price-list li { margin-bottom: 8px; }
+    .price-list li::before { content: "✓ "; color: var(--primary); }
 
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-    }
+    /* FAQ Details */
+    details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; cursor: pointer; }
+    summary { font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::after { content: '+'; color: var(--primary); font-size: 1.5rem; }
+    details[open] summary::after { content: '−'; }
+    .faq-ans { padding-top: 1rem; color: var(--text-muted); font-size: 0.95rem; }
 
-    .btn {
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      display: inline-block;
-    }
+    /* Legal Sections */
+    .legal-content { font-size: 0.9rem; color: var(--text-muted); max-width: 900px; }
+    .legal-content h3 { color: var(--text-main); margin: 1.5rem 0 0.5rem; }
 
-    .btn-primary {
-      background: var(--primary);
-      color: #000;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px var(--primary-glow);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      background: var(--glass-bg);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      background: rgba(16, 185, 129, 0.05);
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .profile-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      border-radius: 30px;
-      backdrop-filter: blur(20px);
-      text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    }
-
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 20px;
-      object-fit: cover;
-      margin-bottom: 1.5rem;
-      border: 4px solid var(--border);
-    }
-
-    /* Section Styling */
-    section { padding: 100px 0; }
-
-    .section-tag {
-      color: var(--primary);
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-    }
-
-    /* Bento Grid for Services */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-      border-radius: 24px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card:hover {
-      border-color: var(--primary);
-      transform: translateY(-10px);
-      background: rgba(17, 24, 39, 0.9);
-    }
-
-    .card i {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Pricing & Stats */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 2rem;
-      background: var(--glass-bg);
-      border-radius: 20px;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      display: block;
-    }
-
-    /* Form Styling */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      background: var(--glass-bg);
-      border: 1px solid var(--border);
-      padding: 1.2rem;
-      border-radius: 12px;
-      color: white;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      outline: none;
-    }
-
-    input:focus, textarea:focus {
-      border-color: var(--primary);
-    }
-
-    .contact-info-card {
-      background: linear-gradient(145deg, var(--bg-card), rgba(99, 102, 241, 0.05));
-      padding: 3rem;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-    }
-
-    .info-item {
-      display: flex;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .info-icon {
-      width: 50px;
-      height: 50px;
-      background: var(--glass-bg);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.2rem;
-    }
-
-    /* Footer */
-    footer {
-      padding: 4rem 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-muted);
-    }
+    /* Form */
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; }
+    input, textarea { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 1rem; border-radius: 10px; color: white; margin-bottom: 1rem; outline: none; }
+    input:focus, textarea:focus { border-color: var(--primary); }
 
     /* Responsive */
     @media (max-width: 968px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
-      .hero-p { margin: 0 auto 2.5rem; }
-      .btn-group { justify-content: center; }
-      .contact-container { grid-template-columns: 1fr; }
+      .hero, .contact-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .menu-btn { display: block; }
+      .hero { text-align: center; }
+      .hero-text { margin: 0 auto 2.5rem; }
+      .btn-group { justify-content: center; }
     }
   </style>
 </head>
@@ -423,140 +139,293 @@
 
   <nav class="navbar">
     <div class="container nav-inner">
-      <a href="#" class="logo">SELIM<span>REZA.</span></a>
-      <ul class="nav-links">
+      <a href="#" class="logo">MD. SELIM<span>.</span></a>
+      <ul class="nav-links" id="navMenu">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Work</a></li>
+        <li><a href="#samples">Samples</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="menu-btn"><i class="fas fa-bars"></i></button>
+      <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </div>
   </nav>
 
   <main class="container">
     
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-content reveal">
-        <div class="badge">
-          <span class="pulse"></span> Available for Remote Projects
-        </div>
+      <div class="reveal">
+        <div class="availability"><span class="dot"></span> Available for remote work</div>
         <h1>Bengali AI & <br><span class="gradient-text">Web Specialist</span></h1>
-        <p class="hero-p">Bridging the gap between Bengali linguistic nuance and cutting-edge AI technology. Specialist in data evaluation, annotation, and frontend solutions.</p>
+        <p class="hero-text">Detail-oriented and tech-savvy professional with four years of experience in Microsoft Office, AI-assisted development, and Bengali language analysis.</p>
         <div class="btn-group">
-          <a href="#contact" class="btn btn-primary">Start a Project</a>
-          <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Get Resume</a>
+          <a href="#contact" class="btn btn-primary">Hire Me Now</a>
+          <a href="Md-Selim-Reza-CV.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
         </div>
       </div>
-      
-      <div class="hero-image reveal">
+      <div class="reveal">
         <div class="profile-card">
-          <img src="profile-photo.jpg" alt="Selim Reza" class="profile-img">
+          <img src="profile-photo.jpg" alt="MD. Selim Reza" class="profile-img">
           <h2>MD. SELIM REZA</h2>
-          <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Bengali AI Evaluator</p>
-          <p><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</p>
-          <div class="stats-grid" style="grid-template-columns: 1fr 1fr; margin-top: 2rem;">
-            <div class="stat-item" style="padding: 1rem;">
-              <span class="stat-number" style="font-size: 1.5rem;">4+</span>
-              <small>Years Exp.</small>
-            </div>
-            <div class="stat-item" style="padding: 1rem;">
-              <span class="stat-number" style="font-size: 1.5rem;">100%</span>
-              <small>Quality</small>
-            </div>
+          <p style="color:var(--primary)">Bengali AI & Content Specialist</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 5px;"><i class="fas fa-map-marker-alt"></i> Rajshahi, Bangladesh</p>
+          <div class="btn-group" style="justify-content: center; margin-top: 1.5rem;">
+            <a href="https://github.com/epicbite9" target="_blank" class="btn btn-outline" style="padding: 10px;"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/selim-reza-2578313a1" target="_blank" class="btn btn-outline" style="padding: 10px;"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-      <span class="section-tag reveal">Expertise</span>
-      <h2 class="section-title reveal">Premium Services</h2>
+    <!-- ABOUT & SKILLS -->
+    <section id="about">
+      <div class="section-head">
+        <span class="tag">About Me</span>
+        <h2>Language expertise meets Technology</h2>
+      </div>
       <div class="grid">
         <div class="card reveal">
-          <i class="fas fa-brain"></i>
-          <h3>AI Evaluation</h3>
-          <p>Analyzing AI responses for Bengali linguistic accuracy, cultural relevance, and safety guidelines.</p>
+          <h3>My Story</h3>
+          <p>I am a native Bengali speaker with professional English proficiency. My background includes four years of MS Office experience and AI-assisted development. I leverage classical and modern Bengali literature to ensure AI responses sound natural, culturally appropriate, and grammatically perfect.</p>
+          <ul class="facts">
+            <li><span>Experience</span> <strong>4 Years</strong></li>
+            <li><span>Education</span> <strong>HSC (Result Pending)</strong></li>
+            <li><span>Location</span> <strong>Rajshahi, BD</strong></li>
+          </ul>
         </div>
         <div class="card reveal">
-          <i class="fas fa-language"></i>
-          <h3>Localization</h3>
-          <p>Expert translation and proofreading that preserves the soul of the Bengali language.</p>
+          <h3>Technical Skills</h3>
+          <div class="skills-flex">
+            <span class="skill-tag">Bengali AI Evaluation</span>
+            <span class="skill-tag">Data Annotation</span>
+            <span class="skill-tag">Translation</span>
+            <span class="skill-tag">Fact-Checking</span>
+            <span class="skill-tag">HTML/CSS/JS</span>
+            <span class="skill-tag">MS Excel & Word</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Netlify</span>
+            <span class="skill-tag">Content Evaluation</span>
+            <span class="skill-tag">Google Workspace</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-head">
+        <span class="tag">Services</span>
+        <h2>How I can help</h2>
+      </div>
+      <div class="grid">
+        <div class="card reveal">
+          <i class="fas fa-microchip"></i>
+          <h3>AI Evaluation</h3>
+          <p>Reviewing AI-generated Bengali responses for accuracy, safety, and relevance.</p>
+        </div>
+        <div class="card reveal">
+          <i class="fas fa-pen-nib"></i>
+          <h3>Proofreading</h3>
+          <p>Correcting Bengali spelling, grammar, and unnatural machine-generated writing.</p>
+        </div>
+        <div class="card reveal">
+          <i class="fas fa-globe"></i>
+          <h3>Translation</h3>
+          <p>Bengali-English localization while preserving cultural intent and tone.</p>
+        </div>
+        <div class="card reveal">
+          <i class="fas fa-tags"></i>
+          <h3>Data Annotation</h3>
+          <p>Structured labeling, quality review, and guideline-based data categorization.</p>
+        </div>
+        <div class="card reveal">
+          <i class="fas fa-file-excel"></i>
+          <h3>MS Office Support</h3>
+          <p>Creating professional reports, Excel spreadsheets, and clean documentation.</p>
         </div>
         <div class="card reveal">
           <i class="fas fa-code"></i>
-          <h3>Web Dev</h3>
-          <p>Modern, responsive frontend development with a focus on UI/UX and clean code architectures.</p>
+          <h3>Web Development</h3>
+          <p>Building responsive browser-based tools and static frontend websites.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO SAMPLES -->
+    <section id="samples">
+      <div class="section-head">
+        <span class="tag">Work Samples</span>
+        <h2>Demonstration of Quality</h2>
+      </div>
+      <div class="grid">
+        <div class="card reveal" style="border-left: 4px solid var(--primary);">
+          <small style="color: var(--primary);">01 · AI Response Evaluation</small>
+          <p style="margin-top:10px;">Comparing two Bengali AI answers to select the strongest based on accuracy and instruction-following.</p>
+        </div>
+        <div class="card reveal" style="border-left: 4px solid var(--primary);">
+          <small style="color: var(--primary);">02 · Bengali Proofreading</small>
+          <p style="margin-top:10px;">Fixing unnatural sentence constructions and punctuation in complex Bengali paragraphs.</p>
+        </div>
+        <div class="card reveal" style="border-left: 4px solid var(--primary);">
+          <small style="color: var(--primary);">03 · Translation Review</small>
+          <p style="margin-top:10px;">Ensuring English-to-Bengali translations preserve tone and cultural metaphors.</p>
+        </div>
+        <div class="card reveal" style="border-left: 4px solid var(--primary);">
+          <small style="color: var(--primary);">04 · Fact-Checking</small>
+          <p style="margin-top:10px;">Separating verifiable data from unsupported claims in AI outputs.</p>
+        </div>
+        <div class="card reveal" style="border-left: 4px solid var(--primary);">
+          <small style="color: var(--primary);">05 · Tone & Context</small>
+          <p style="margin-top:10px;">Evaluating if Bengali text is formal, respectful, or persuasive based on target audience.</p>
+        </div>
+        <div class="card reveal" style="border-left: 4px solid var(--primary);">
+          <small style="color: var(--primary);">06 · Excel Data Org</small>
+          <p style="margin-top:10px;">Cleaning inconsistent datasets and standardizing information into readable reports.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-head">
+        <span class="tag">Pricing</span>
+        <h2>Flexible Starting Rates</h2>
+      </div>
+      <div class="grid">
+        <div class="card reveal">
+          <h3>Language Support</h3>
+          <div class="price">From $5</div>
+          <ul class="price-list">
+            <li>Short Translations</li>
+            <li>Grammar Correction</li>
+            <li>Proofreading</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%; justify-content: center;">Quote</a>
+        </div>
+        <div class="card reveal" style="border-color: var(--primary);">
+          <h3>AI & Data Work</h3>
+          <div class="price">From $8</div>
+          <ul class="price-list">
+            <li>Response Evaluation</li>
+            <li>Data Annotation</li>
+            <li>Fact-Checking</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%; justify-content: center;">Quote</a>
         </div>
         <div class="card reveal">
-          <i class="fas fa-database"></i>
-          <h3>Data Annotation</h3>
-          <p>High-precision labeling and structured data organization for machine learning models.</p>
+          <h3>Web Support</h3>
+          <div class="price">From $20</div>
+          <ul class="price-list">
+            <li>Landing Pages</li>
+            <li>Website Updates</li>
+            <li>Basic Debugging</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%; justify-content: center;">Quote</a>
         </div>
       </div>
     </section>
 
-    <!-- Project Section -->
-    <section id="projects">
-      <span class="section-tag reveal">Portfolio</span>
-      <h2 class="section-title reveal">Featured Work</h2>
-      <div class="card reveal" style="display: flex; flex-direction: row; gap: 2rem; align-items: center; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px;">
-          <h3 class="gradient-text" style="font-size: 2rem;">MyImageTools</h3>
-          <p style="margin: 1.5rem 0;">A comprehensive browser-based suite for image processing. Built with performance and privacy in mind, allowing users to crop, compress, and convert images instantly.</p>
-          <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
-            <span class="badge" style="margin: 0;">HTML5</span>
-            <span class="badge" style="margin: 0;">Tailwind</span>
-            <span class="badge" style="margin: 0;">JavaScript</span>
-          </div>
-          <a href="https://myimagetools.netlify.app" target="_blank" class="btn btn-outline">View Live Project <i class="fas fa-external-link-alt"></i></a>
-        </div>
-        <div style="flex: 1; min-width: 300px; background: var(--bg-dark); height: 250px; border-radius: 15px; border: 1px solid var(--border);">
-            <!-- Placeholder for project screenshot -->
-             <div style="display: flex; height: 100%; align-items: center; justify-content: center; color: var(--border);">
-                <i class="fas fa-laptop-code fa-4x"></i>
-             </div>
-        </div>
+    <!-- BLOG -->
+    <section id="blog">
+      <div class="section-head">
+        <span class="tag">Insights</span>
+        <h2>Blog & Thoughts</h2>
+      </div>
+      <div class="grid">
+        <article class="card reveal">
+          <small style="color:var(--primary)">AI & LANGUAGE</small>
+          <h3 style="margin: 10px 0;">Why Bengali Context Matters</h3>
+          <p>Bengali AI evaluation requires more than spelling. Meaning changes through tone, honorifics, and cultural idioms.</p>
+        </article>
+        <article class="card reveal">
+          <small style="color:var(--primary)">QUALITY REVIEW</small>
+          <h3 style="margin: 10px 0;">5 Things to Check in AI Answers</h3>
+          <p>Accuracy, relevance, completeness, clarity, and following the user's specific instructions.</p>
+        </article>
+        <article class="card reveal">
+          <small style="color:var(--primary)">WEB DEV</small>
+          <h3 style="margin: 10px 0;">AI-Assisted Development</h3>
+          <p>Using AI as a tool while maintaining full responsibility for testing, security, and usability.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-head">
+        <span class="tag">Help</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div style="max-width: 800px;">
+        <details class="reveal">
+          <summary>What type of remote work do you accept?</summary>
+          <div class="faq-ans">I accept Bengali AI evaluation, data annotation, proofreading, translation, and basic web development projects.</div>
+        </details>
+        <details class="reveal">
+          <summary>Can you work with detailed guidelines?</summary>
+          <div class="faq-ans">Yes. I am comfortable following structured instructions, evaluation criteria, and quality-control procedures.</div>
+        </details>
+        <details class="reveal">
+          <summary>Do you offer a free trial project?</summary>
+          <div class="faq-ans">I can discuss a small, clearly defined sample task before a larger project begins.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
-      <span class="section-tag reveal">Inquiry</span>
-      <h2 class="section-title reveal">Let's Work Together</h2>
-      
-      <div class="contact-container">
-        <form class="reveal" action="#" method="POST">
-          <input type="text" placeholder="Full Name" required>
-          <input type="email" placeholder="Email Address" required>
-          <input type="text" placeholder="Subject">
-          <textarea rows="5" placeholder="Project details..."></textarea>
-          <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Message <i class="fas fa-paper-plane"></i></button>
+      <div class="section-head">
+        <span class="tag">Contact</span>
+        <h2>Let's build something.</h2>
+      </div>
+      <div class="contact-grid">
+        <form class="reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label><input name="bot-field" /></label></p>
+          
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
         </form>
+        
+        <div class="reveal">
+          <div class="card">
+            <h3>Contact Details</h3>
+            <p style="margin: 1rem 0;"><i class="fas fa-envelope color-primary"></i> <a href="mailto:imdselim95@gmail.com" style="color:white; text-decoration:none;"> imdselim95@gmail.com</a></p>
+            <p style="margin: 1rem 0;"><i class="fas fa-phone color-primary"></i> <a href="tel:+8801345468615" style="color:white; text-decoration:none;"> +880 1345 468615</a></p>
+            <div class="btn-group" style="margin-top:2rem;">
+              <a href="https://wa.me/8801345468615" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="contact-info-card reveal">
-          <div class="info-item">
-            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">Email Me</p>
-              <a href="mailto:imdselim95@gmail.com" style="color: white; text-decoration: none; font-weight: 600;">imdselim95@gmail.com</a>
-            </div>
+    <!-- LEGAL -->
+    <section id="legal">
+      <div class="grid">
+        <div class="reveal">
+          <span class="tag">Policies</span>
+          <h2>Privacy Policy</h2>
+          <div class="legal-content">
+            <p>This website does not intentionally collect personal information unless you voluntarily submit it through the contact form, email, or WhatsApp.</p>
+            <h3>Contact Form</h3>
+            <p>Information submitted is used only to respond to your inquiry and discuss work.</p>
+            <h3>External Links</h3>
+            <p>This website contains links to GitHub, LinkedIn, and Netlify. Their policies apply when you visit those services.</p>
           </div>
-          <div class="info-item">
-            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
-            <div>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">WhatsApp</p>
-              <a href="https://wa.me/8801345468615" style="color: white; text-decoration: none; font-weight: 600;">+880 1345 468615</a>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div>
-              <p style="color: var(--text-muted); font-size: 0.9rem;">LinkedIn</p>
-              <a href="#" style="color: white; text-decoration: none; font-weight: 600;">selim-reza-ai</a>
-            </div>
+        </div>
+        <div class="reveal">
+          <span class="tag">Terms</span>
+          <h2>Terms of Service</h2>
+          <div class="legal-content">
+            <p>Service details, availability, pricing, and deadlines must be agreed upon before work begins.</p>
+            <h3>Work Samples</h3>
+            <p>Samples are demonstrations to show capabilities. They do not represent paid client work unless stated.</p>
+            <h3>Payments</h3>
+            <p>Payment terms should be agreed upon in writing before a project starts.</p>
           </div>
         </div>
       </div>
@@ -564,47 +433,43 @@
 
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <span id="year"></span> MD. SELIM REZA. Developed with Precision.</p>
-    </div>
+  <footer style="padding: 3rem 0; border-top: 1px solid var(--border); text-align: center;">
+    <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; <span id="year"></span> MD. SELIM REZA. All rights reserved.</p>
   </footer>
 
   <script>
-    // Update Year
+    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll Reveal Animation
-    const reveal = () => {
-      const reveals = document.querySelectorAll('.reveal');
-      reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-          el.classList.add('active');
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+        menu.style.flexDirection = 'column';
+        menu.style.position = 'absolute';
+        menu.style.top = '70px';
+        menu.style.left = '0';
+        menu.style.width = '100%';
+        menu.style.background = 'var(--bg-dark)';
+        menu.style.padding = '2rem';
+        menu.style.borderBottom = '1px solid var(--border)';
+      }
+    }
+
+    // Scroll Reveal Effect
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
         }
       });
-    };
+    }, observerOptions);
 
-    window.addEventListener('scroll', reveal);
-    // Initial check
-    reveal();
-
-    // Mobile Menu Toggle
-    const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuBtn.addEventListener('click', () => {
-      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '70px';
-      navLinks.style.left = '0';
-      navLinks.style.width = '100%';
-      navLinks.style.background = 'var(--bg-dark)';
-      navLinks.style.padding = '2rem';
-    });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
-</html>
+  </html>
